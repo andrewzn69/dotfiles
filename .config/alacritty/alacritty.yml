@@ -1,0 +1,83 @@
+# Font configuration
+font:
+  # Normal (roman) font face
+  normal:
+    family: JetBrains Mono Nerd Font Mono
+    # The `style` can be specified to pick a specific face.
+    style: Regular
+
+  # Bold font face
+  bold:
+    family: JetBrains Mono Nerd Font Mono
+    # The `style` can be specified to pick a specific face.
+    style: Bold
+
+  # Italic font face
+  italic:
+    family: JetBrains Mono Nerd Font Mono
+    # The `style` can be specified to pick a specific face.
+    style: Italic
+
+  # Bold italic font face
+  #bold_italic:
+    # Font family
+    #
+    # If the bold italic family is not specified, it will fall back to the
+    # value specified for the normal font.
+    #family: monospace
+
+    # The `style` can be specified to pick a specific face.
+    #style: Bold Italic
+
+  # Point size
+  size: 12.0
+
+  # Offset is the extra space around each character. `offset.y` can be thought
+  # of as modifying the line spacing, and `offset.x` as modifying the letter
+  # spacing.
+  offset:
+    x: 0
+    y: 0
+
+  # Glyph offset determines the locations of the glyphs within their cells with
+  # the default being at the bottom. Increasing `x` moves the glyph to the
+  # right, increasing `y` moves the glyph upward.
+  glyph_offset:
+    x: 0
+    y: 0
+
+# Colors (Nord)
+colors:
+  # Default colors
+  primary:
+    background: '#2E3440'
+    foreground: '#D4D9DB'
+ #  background: CellForeground
+
+  # Normal colors
+  normal:
+    black:   '#090B0F'
+    red:     '#475768'
+    green:   '#556777'
+    yellow:  '#637686'
+    blue:    '#758895'
+    magenta: '#97A6AF'
+    cyan:    '#AFBCC2'
+    white:   '#D4D9DB'
+
+  # Bright colors
+  bright:
+    black:   '#949799'
+    red:     '#475768'
+    green:   '#556777'
+    yellow:  '#637686'
+    blue:    '#758895'
+    magenta: '#97A6AF'
+    cyan:    '#AFBCC2'
+    white:   '#D4D9DB'
+
+# Padding
+window:
+  padding:
+    x: 10
+    y: 10
