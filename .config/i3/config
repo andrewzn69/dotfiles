@@ -35,6 +35,7 @@ bindsym $mod+Shift+q kill
 
 # start program launcher
 bindsym $mod+d exec --no-startup-id rofi -show run
+bindsym $mod+BackSpace exec --no-startup-id rofi -show window
 
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
@@ -186,13 +187,22 @@ bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
 bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 
+# Reserve workspace for specific monitors
+workspace 1 output HDMI-A-0
+workspace 2 output DisplayPort-1
+workspace 6 output HDMI-A-0
+
 # Open applications on specific workspaces
-# assign [class="Thunderbird"] $ws1
-# assign [class="Pale moon"] $ws2
-# assign [class="Pcmanfm"] $ws3
+assign [class="Chromium"] $ws1
+assign [class="discord"] $ws2
 # assign [class="Skype"] $ws5
+assign [class="Spotify"] $ws6
 
 # Open specific applications in floating mode
+for_window [class="gwenview"] floating enable
+for_window [class="obsidian"] floating enable
+for_window [class="Thunar"] floating enable
+for_window [title="zathura"] floating enable
 for_window [title="alsamixer"] floating enable border pixel 1
 for_window [class="calamares"] floating enable border normal
 for_window [class="Clipgrab"] floating enable
@@ -203,20 +213,16 @@ for_window [class="GParted"] floating enable border normal
 for_window [title="i3_help"] floating enable sticky enable border normal
 for_window [class="Lightdm-settings"] floating enable
 for_window [class="Lxappearance"] floating enable sticky enable border normal
-for_window [class="Manjaro-hello"] floating enable
-for_window [class="Manjaro Settings Manager"] floating enable border normal
 for_window [title="MuseScore: Play Panel"] floating enable
 for_window [class="Nitrogen"] floating enable sticky enable border normal
 for_window [class="Oblogout"] fullscreen enable
 for_window [class="octopi"] floating enable
-for_window [title="About Pale Moon"] floating enable
 for_window [class="Pamac-manager"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="qt5ct"] floating enable sticky enable border normal
 for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
 for_window [class="Simple-scan"] floating enable border normal
 for_window [class="(?i)System-config-printer.py"] floating enable border normal
-for_window [class="Skype"] floating enable border normal
 for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
@@ -278,6 +284,9 @@ mode "resize" {
 bindsym $mod+9 exec --no-startup-id blurlock
 
 # Autostart applications
+exec --no-startup-id LD_PRELOAD=~/.config/spotifywm/spotifywm.so /usr/bin/spotify
+exec --no-startup-id discord
+exec --no-startup-id chromium
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id ~/.screenlayout/brumomento.sh
 exec --no-startup-id nitrogen --restore
@@ -291,7 +300,6 @@ exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id numlockx on
 exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id ~/.config/polybar/launch.sh
-exec_always --no-startup-id i3-msg 'workspace 6; exec --no-startup-id spotify; workspace 1; exec no-startup-id discord; workspace 2'
 exec --no-startup-id ~/Development/Bash/openrgb.sh
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
