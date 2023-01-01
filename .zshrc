@@ -25,8 +25,8 @@ alias vi="nvim"
 alias oldvim="vim"
 
 # alias for youtube-dl
-alias mp3='youtube-dl --extract-audio-format" "mp3"'
-alias mp4="youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4'"
+alias mp3='yt-dlp --extract-audio --audio-format mp3'
+alias mp4='yt-dlp -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4"'
 
 # prompt
 PROMPT='%B%F{green}[%f%b''%B%F{white}%~%f%b''%B%F{green}]%f%b''%B%F{green}$%f%b '  
