@@ -10,11 +10,14 @@ zsh-completions
 
 source $ZSH/oh-my-zsh.sh
 
+# colors
 alias red='bash ~/Development/Bash/openrgb.sh clear'
 alias hib='bash ~/Development/Bash/openrgb2.sh clear'
-alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 alias ls='ls --color=auto'
 unset RPROMPT
+
+# git alias for my dotfiles folder
+alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
 # alias for nvim
 alias vim="nvim"
