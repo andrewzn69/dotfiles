@@ -24,6 +24,10 @@ alias vim="nvim"
 alias vi="nvim"
 alias oldvim="vim"
 
+# alias for youtube-dl
+alias mp3='youtube-dl --extract-audio-format" "mp3"'
+alias mp4="youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4'"
+
 # prompt
 PROMPT='%B%F{green}[%f%b''%B%F{white}%~%f%b''%B%F{green}]%f%b''%B%F{green}$%f%b '  
 alias config='/usr/bin/git --git-dir=/home/zimn/dotfiles --work-tree=/home/zimn'
