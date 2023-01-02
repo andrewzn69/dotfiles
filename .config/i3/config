@@ -289,6 +289,8 @@ mode "resize" {
 bindsym $mod+9 exec --no-startup-id blurlock
 
 # Autostart applications
+exec --no-startup-id syncthing -no-browser
+exec --no-startup-id python ~/Development/Python/mp3tagging.py
 exec --no-startup-id LD_PRELOAD=~/.config/spotifywm/spotifywm.so /usr/bin/spotify
 exec --no-startup-id discord
 exec --no-startup-id chromium
