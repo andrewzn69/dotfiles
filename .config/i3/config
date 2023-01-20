@@ -80,10 +80,10 @@ bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 # focus_follows_mouse no
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -113,7 +113,7 @@ bindsym $mod+Ctrl+KP_6 move workspace to output right
 bindsym $mod+Ctrl+KP_4 move workspace to output left
 
 # split orientation
-bindsym $mod+h split h;exec --no-startup-id notify-send 'tile horizontally'
+bindsym $mod+g split g;exec --no-startup-id notify-send 'tile horizontally'
 bindsym $mod+v split v;exec --no-startup-id notify-send 'tile vertically'
 bindsym $mod+q split toggle
 
