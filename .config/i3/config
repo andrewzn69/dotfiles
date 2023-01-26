@@ -37,9 +37,6 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec --no-startup-id rofi -show run
 bindsym $mod+BackSpace exec --no-startup-id rofi -show window
 
-# launch categorized menu
-bindsym $mod+z exec --no-startup-id morc_menu
-
 ################################################################################################
 ## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
 ################################################################################################
@@ -61,23 +58,13 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86AudioStop exec --no-startup-id ~/Development/bash-scripts/openrgb.sh
 
 # Start Applications
-bindsym $mod+Ctrl+b exec --no-startup-id terminal -e 'bmenu'
 bindsym $mod+Shift+Return exec --no-startup-id chromium
-# bindsym $mod+F3 exec pcmanfm
 bindsym $mod+m exec --no-startup-id 'thunar'
-bindsym $mod+Shift+F3 exec --no-startup-id pcmanfm_pkexec
-bindsym $mod+F5 exec --no-startup-id terminal -e 'mocp'
 bindsym $mod+t exec --no-startup-id pkill picom
 bindsym $mod+Ctrl+t exec --no-startup-id picom -b
-bindsym $mod+Shift+d --release exec --no-startup-id "killall dunst; exec notify-send 'restart dunst'"
 
 # Screenshot
 bindsym Print --release exec --no-startup-id flameshot gui
-
-bindsym $mod+Shift+h exec --no-startup-id xdg-open /usr/share/doc/manjaro/i3_help.pdf
-bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
-
-# focus_follows_mouse no
 
 # change focus
 bindsym $mod+h focus left
@@ -92,10 +79,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -199,30 +186,20 @@ workspace 6 output HDMI-A-0
 # Open applications on specific workspaces
 assign [class="Chromium"] $ws1
 assign [class="discord"] $ws2
-# assign [class="Skype"] $ws5
 assign [class="Spotify"] $ws6
 
 # Open specific applications in floating mode
-for_window [class="easytag"] floating enable
 for_window [class="gwenview"] floating enable
 for_window [class="obsidian"] floating enable
 for_window [class="Thunar"] floating enable
 for_window [title="zathura"] floating enable
 for_window [title="alsamixer"] floating enable border pixel 1
-for_window [class="calamares"] floating enable border normal
-for_window [class="Clipgrab"] floating enable
 for_window [title="File Transfer*"] floating enable
-for_window [class="fpakman"] floating enable
 for_window [class="Galculator"] floating enable border pixel 1
-for_window [class="GParted"] floating enable border normal
-for_window [title="i3_help"] floating enable sticky enable border normal
 for_window [class="Lightdm-settings"] floating enable
 for_window [class="Lxappearance"] floating enable sticky enable border normal
 for_window [title="MuseScore: Play Panel"] floating enable
 for_window [class="Nitrogen"] floating enable sticky enable border normal
-for_window [class="Oblogout"] fullscreen enable
-for_window [class="octopi"] floating enable
-for_window [class="Pamac-manager"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="qt5ct"] floating enable sticky enable border normal
 for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
@@ -249,13 +226,11 @@ bindsym $mod+Shift+t exec --no-startup-id bash ~/Development/bash-scripts/langua
 
 # Set shut down, restart and locking features
 bindsym $mod+0 mode "$mode_system"
-set $mode_system (l)ock, (e)xit, switch_(u)ser, (sus)pend, (h)ibernate, (r)eboot, (Shift+s)hutdown
+set $mode_system (l)ock, switch_(u)ser, (sus)pend, (r)eboot, (Shift+s)hutdown
 mode "$mode_system" {
     bindsym l exec --no-startup-id blurlock -c python ~/Development/Python/yeelightsvetylka.py, mode "default"
     bindsym s exec --no-startup-id ~/Development/bash-scripts/hibernation.sh, mode "default"  
     bindsym u exec --no-startup-id i3exit switch_user, mode "default"
-    bindsym e exec --no-startup-id i3exit logout, mode "default"
-    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
     bindsym r exec --no-startup-id i3exit 'reboot', mode "default"
     bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
 
@@ -302,28 +277,10 @@ exec --no-startup-id ~/.screenlayout/brumomento.sh
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id picom -b
 exec --no-startup-id pulseeffects -l bassss
-exec --no-startup-id nm-applet
-exec --no-startup-id xfce4-power-manager
-exec --no-startup-id pamac-tray
-exec --no-startup-id clipit
-exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id numlockx on
-exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec --no-startup-id ~/Development/bash-scripts/openrgb.sh
 
-# Color palette used for the terminal ( ~/.Xresources file )
-# Colors are gathered based on the documentation:
-# https://i3wm.org/docs/userguide.html#xresources
-# Change the variable name at the place you want to match the color
-# of your terminal like this:
-# [example]
-# If you want your bar to have the same background color as your 
-# terminal background change the line 362 from:
-# background #14191D
-# to:
-# background $term_background
-# Same logic applied to everything else.
 set_from_resource $term_background background
 set_from_resource $term_foreground foreground
 set_from_resource $term_color0     color0
@@ -342,38 +299,6 @@ set_from_resource $term_color12    color12
 set_from_resource $term_color13    color13
 set_from_resource $term_color14    color14
 set_from_resource $term_color15    color15
-
-# Start i3bar to display a workspace bar (plus the system information i3status if available)
-#bar {
-#	i3bar_command i3bar
-#	status_command i3status
-#	position top
-#
-## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
-#	tray_output primary
-#	tray_output eDP1
-#
-#	bindsym button4 nop
-#	bindsym button5 nop
-#   font xft:URWGothic-Book 11
-#	strip_workspace_numbers yes
-#
-#    colors {
-#        background #222D31
-#        statusline #F9FAF9
-#        separator  #454947
-#
-#                      border  backgr. text
-#        focused_workspace  #F9FAF9 #16a085 #292F34
-#        active_workspace   #595B5B #353836 #FDF6E3
-#        inactive_workspace #595B5B #222D31 #EEE8D5
-#        binding_mode       #16a085 #2C2C2C #F9FAF9
-#        urgent_workspace   #16a085 #FDF6E3 #E5201D
-#    }
-#}
-
-# hide/unhide i3status bar
-bindsym $mod+p bar mode toggle
 
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
