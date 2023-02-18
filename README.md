@@ -1,6 +1,6 @@
 <div align="center">
 <h1><i>/home/andrewzn/dotfiles</i></h1>
-
+<h4>Dotfiles, that I have <i>borrowed</i> from a couple of people and modified them to my liking.<h4>
 
 <p><img alt="color palette" src="https://github.com/catppuccin/catppuccin/blob/main/assets/palette/morning.png" width="300px"></p>
 
