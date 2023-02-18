@@ -28,6 +28,5 @@
   | 🎨 **Theme**          | [**Catppuccin**](https://github.com/catppuccin/catppuccin)
   | 📝 **IDE**            | [**Neovim**](https://neovim.io)
   | 🐱 **Terminal**       | [**Kitty**](https://sw.kovidgoyal.net/kitty)
-  | 🌏 **Browser**        | [**Firefox**](https://nnbnh.github.io/blog/en/posts/3)
 
 </div>
