@@ -188,6 +188,7 @@ assign [class="discord"] $ws2
 assign [class="Spotify"] $ws6
 
 # Open specific applications in floating mode
+for_window [class="Polybar"] border pixel 0
 for_window [class="gwenview"] floating enable
 for_window [class="obsidian"] floating enable
 for_window [class="Thunar"] floating enable resize set 760 520, move position center
