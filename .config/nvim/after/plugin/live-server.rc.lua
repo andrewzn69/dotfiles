@@ -5,7 +5,7 @@ end
 
 live_server.setup({
   port = 6969,
-  browser_command = "chromium", -- Command or executable path
+  browser_command = "firefox", -- Command or executable path
   quiet = false,
   no_css_inject = false,
 })
