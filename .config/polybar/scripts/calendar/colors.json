@@ -1,0 +1,27 @@
+{
+  "wallpaper": "/home/nev/Pictures/lemon.jpg",
+  "alpha": "100",
+  "special": {
+    "background": "#1E1E2E",
+    "foreground": "#D9E0EE",
+    "cursor": "#F5E0DC"
+  },
+  "colors": {
+    "color0": "#1E1E2E",
+    "color1": "#F28FAD",
+    "color2": "#ABE9B3",
+    "color3": "#FAE3B0",
+    "color4": "#96CDFB",
+    "color5": "#F5C2E7",
+    "color6": "#89DCEB",
+    "color7": "#D9E0EE",
+    "color8": "#988BA2",
+    "color9": "#F28FAD",
+    "color10": "#ABE9B3",
+    "color11": "#FAE3B0",
+    "color12": "#96CDFB",
+    "color13": "#F5C2E7",
+    "color14": "#89DCEB",
+    "color15": "#D9E0EE"
+  }
+}
