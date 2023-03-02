@@ -16,7 +16,6 @@ vim.opt.cmdheight = 1
 vim.opt.laststatus = 2
 vim.opt.expandtab = true
 vim.opt.scrolloff = 10
-vim.opt.shell = 'kitty'
 vim.opt.inccommand = 'split'
 vim.opt.ignorecase = true -- Case insensitive searching UNLESS /C or capital in search
 vim.opt.smarttab = true
