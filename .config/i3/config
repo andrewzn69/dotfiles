@@ -51,9 +51,9 @@ bindsym $mod+Ctrl+m exec --no-startup-id pavucontrol
 ################################################################################################
 
 # Media Player controls
-bindsym XF86AudioPlay exec playerctl --player=spotify play-pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioPlay exec --no-startup-id playerctl --player=spotify play-pause
+bindsym XF86AudioNext exec --no-startup-id playerctl next
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
 # Openrgb & Yeelight control
 bindsym XF86AudioStop exec --no-startup-id ~/Development/bash-scripts/openrgb.sh
