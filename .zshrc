@@ -9,6 +9,9 @@ export PF_ASCII="Catppuccin"
 export PF_COL1=7
 export PF_COL3=5
 
+# removes background color for mounted directories
+export LS_COLORS="$LS_COLORS:ow=1;34:tw=1;34:"
+
 # plugins
 plugins=(
 git
@@ -19,15 +22,18 @@ zsh-completions
 source $ZSH/oh-my-zsh.sh
 
 # colors
-alias red='bash ~/Development/Bash/openrgb.sh clear'
-alias hib='bash ~/Development/Bash/openrgb2.sh clear'
 alias ls='ls --color=auto'
 unset RPROMPT
+
+# alias for yay/pacman
+alias ins="yay -S"
+alias up='yay -Syyu'
 
 # git alias for my dotfiles folder
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
 # alias for nvim
+alias v="nvim"
 alias vim="nvim"
 alias vi="nvim"
 alias oldvim="vim"
@@ -46,3 +52,5 @@ setopt PROMPT_SUBST
 
 # prompt
 PROMPT='%B%F{green}󰁕 %f%b''%B%F{blue}%~%f%b''%B%F{blue}$(if git rev-parse --git-dir > /dev/null 2>&1; then echo "%F{green} (%f%F{white} $(git rev-parse --abbrev-ref HEAD)%f%F{green})%f"; fi)%f%b '
+
+export UNZIP_DISABLE_ZIPBOMB_DETECTION=TRUE
