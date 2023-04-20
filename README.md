@@ -13,7 +13,7 @@
 <p align=><img alt="screenshot" src="https://raw.githubusercontent.com/andrewzn69/dotfiles/catppuccin-i3/screenshot.png"></p>
 
 ----
-<h2><a href="https://github.com/andrewzn69/dotfiles/tree/onedark-sway">OneDarker (sway)</a></h2>
+<h2><a href="https://github.com/andrewzn69/dotfiles/tree/onedarker-sway">OneDarker (sway)</a></h2>
 <p align=><img alt="screenshot" src="https://raw.githubusercontent.com/andrewzn69/dotfiles/onedarker-sway/screenshot.png"></p>
 
 ----
