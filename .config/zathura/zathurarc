@@ -1,0 +1,46 @@
+set window-title-basename "true"
+set selection-clipboard "clipboard"
+
+set notification-error-fg       "#dcd7ba"
+set notification-warning-fg     "#44475a"
+set notification-bg             "#110d0b"
+set notification-fg             "#dac48f"
+
+set completion-bg               "#1f1f28"
+set completion-group-bg         "#1f1f28"
+set completion-highlight-bg     "#44475a"
+set completion-highlight-fg     "#dcd7ba"
+
+set index-bg                    "#110d0b"
+set index-fg                    "#dac48f"
+set index-active-fg             "#dac48f"
+
+set inputbar-bg                 "#110d0b"
+set inputbar-fg                 "#dac48f"
+set statusbar-bg                "#110d0b"
+set statusbar-fg                "#dac48f"
+
+set highlight-color             "#2d4f67"
+set highlight-active-color      "#dcd7ba"
+
+set default-bg                  "#110d0b"
+set default-fg                  "#dac48f"
+
+set render-loading              true
+set render-loading-fg           "#1f1f28"
+set render-loading-bg           "#dcd7ba"
+
+#
+# Recolor mode settings
+#
+
+set recolor-lightcolor          "#110d0b"
+set recolor-darkcolor           "#dac48f"
+
+#
+# Startup options
+#
+set adjust-open width
+set recolor true
+
+
