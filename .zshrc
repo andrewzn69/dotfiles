@@ -27,10 +27,11 @@ unset RPROMPT
 
 # alias for yay/pacman
 alias ins="yay -S"
+alias un="yay -R"
 alias up='yay -Syyu'
 
 # git alias for my dotfiles folder
-alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+alias dotfiles='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
 # alias for nvim
 alias v="nvim"
