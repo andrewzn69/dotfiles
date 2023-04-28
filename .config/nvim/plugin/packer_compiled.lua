@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/home/zimn/.local/share/nvim/site/pack/packer/start/Comment.nvim",
     url = "https://github.com/numToStr/Comment.nvim"
   },
+  ["cellular-automaton.nvim"] = {
+    loaded = true,
+    path = "/home/zimn/.local/share/nvim/site/pack/packer/start/cellular-automaton.nvim",
+    url = "https://github.com/Eandrju/cellular-automaton.nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/zimn/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -154,10 +159,10 @@ _G.packer_plugins = {
     path = "/home/zimn/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
-  ["nord.nvim"] = {
+  ["null-ls.nvim"] = {
     loaded = true,
-    path = "/home/zimn/.local/share/nvim/site/pack/packer/start/nord.nvim",
-    url = "https://github.com/shaunsingh/nord.nvim"
+    path = "/home/zimn/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
+    url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
   },
   ["nvim-autopairs"] = {
     loaded = true,
@@ -203,6 +208,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/zimn/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
+  },
+  ["onedark.nvim"] = {
+    loaded = true,
+    path = "/home/zimn/.local/share/nvim/site/pack/packer/start/onedark.nvim",
+    url = "https://github.com/navarasu/onedark.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,
