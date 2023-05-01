@@ -1,86 +1,90 @@
 * {
-    font-family: 'JetBrains Mono Nerd Font';
-    font-size: 16px;
+  font-family: "JetBrains Mono Nerd Font";
+  font-size: 16px;
 }
 
 window#waybar {
-    background: #1B1F28;
-    color: #E0DEF4;
-    border-bottom: solid 3px #2F333C;
-    padding-bottom: 2px;
+  background: #1b1f28;
+  color: #e0def4;
+  border-bottom: solid 3px #2f333c;
+  padding-bottom: 2px;
 }
 
 tooltip {
-	background: #2F333C;
-	border-radius: 15px;
-	border-width: 2px;
-	border-color: #4FA6ED;
-	}
+  background: #2f333c;
+  border-radius: 15px;
+  border-width: 2px;
+  border-color: #4fa6ed;
+}
 
 #workspaces {
-    background: #2F333C;
-    border-top-right-radius: 10px;
-    padding-right: 0px;
-    border: 0;
+  background: #2f333c;
+  border-top-right-radius: 10px;
+  padding-right: 0px;
+  border: 0;
 }
 
 #workspaces button {
-    color: #DADAE8;
-    border: 0;
-    border-width: 10px;
-    padding: 10px 15px 10px 17px;
-    border-bottom: 0px;
+  color: #dadae8;
+  border: 0;
+  border-width: 10px;
+  padding: 10px 15px 10px 17px;
+  border-bottom: 0px;
 }
 
 #workspaces button.focused {
-    background-image: linear-gradient(-70deg, #BF68D9, #E55561); 
-    color: #1B1F28;
-    padding-right: 15px;
-    border-radius: 15px;
-    margin: 5px;
-    padding-top: 2px;
-    padding-bottom: 2px;
+  background-image: linear-gradient(-70deg, #bf68d9, #e55561);
+  color: #1b1f28;
+  padding-right: 15px;
+  border-radius: 15px;
+  margin: 5px;
+  padding-top: 2px;
+  padding-bottom: 2px;
 }
 
 #workspaces button.focused:hover {
-    background-image: linear-gradient(-70deg, #BF68D9, #E55561); 
-    color: #DADAE8;
+  background-image: linear-gradient(-70deg, #bf68d9, #e55561);
+  color: #dadae8;
 }
 
 #workspaces button.urgent {
-    color: #F9C096;
+  color: #f9c096;
 }
 
 #workspaces button:hover {
-    box-shadow: inherit;
-    text-shadow: inherit;
-    background: #2F333C;
-    color: #BF68D9
+  box-shadow: inherit;
+  text-shadow: inherit;
+  background: #2f333c;
+  color: #bf68d9;
 }
 
-#network, #pulseaudio, #battery, #backlight, #clock  {
-	  padding: 2px 10px 2px;
-    margin-top: 5px;
-    margin-bottom: 9px;
-    color: #1B1F28;
+#network,
+#pulseaudio,
+#battery,
+#backlight,
+#clock {
+  padding: 2px 10px 2px;
+  margin-top: 5px;
+  margin-bottom: 9px;
+  color: #1b1f28;
 }
 
 #custom-playerctl {
-    background: #2F333C;
-    margin-top: 5px;
-    margin-bottom: 9px;
-    padding-right: 15px;
-    padding-left: 15px;
-    padding-top: 2px;
-    border-radius: 15px;
+  background: #2f333c;
+  margin-top: 5px;
+  margin-bottom: 9px;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-top: 2px;
+  border-radius: 15px;
 }
 
 #network {
-    padding-right: 15px;
-    margin-right: 5px;
-    border-radius: 15px;
-    margin-left: 5px;
-    background-image: linear-gradient(-70deg, #8EBD6B, #4FA6ED);
+  padding-right: 15px;
+  margin-right: 5px;
+  border-radius: 15px;
+  margin-left: 5px;
+  background-image: linear-gradient(-70deg, #8ebd6b, #4fa6ed);
 }
 
 /* #custom-vpn {
@@ -95,29 +99,29 @@ tooltip {
   margin-right: 5px;
   margin-left: 5px;
   padding-right: 15px;
-  background-image: linear-gradient(-70deg, #BF68D9, #8EBD6B);
+  background-image: linear-gradient(-70deg, #bf68d9, #8ebd6b);
 }
 
 #battery {
-    border-radius: 15px;
-    margin-right: 5px;
-    margin-left: 5px;
-    padding-right: 15px;
-    background-image: linear-gradient(-70deg, #48B0BD, #BF68D9);
+  border-radius: 15px;
+  margin-right: 5px;
+  margin-left: 5px;
+  padding-right: 15px;
+  background-image: linear-gradient(-70deg, #48b0bd, #bf68d9);
 }
 
 #backlight {
-    border-radius: 15px;
-    margin-right: 5px;
-    margin-left: 5px;
-    padding-right: 15px;
-    background-image: linear-gradient(-70deg, #E2B86B, #48B0BD);
+  border-radius: 15px;
+  margin-right: 5px;
+  margin-left: 5px;
+  padding-right: 15px;
+  background-image: linear-gradient(-70deg, #e2b86b, #48b0bd);
 }
 
 #clock {
-    padding-right: 15px;
-    margin-right: 5px;
-    border-radius: 15px;
-    margin-left: 5px;
-    background-image: linear-gradient(-70deg, #E55561, #E2B86B);
+  padding-right: 15px;
+  margin-right: 5px;
+  border-radius: 15px;
+  margin-left: 5px;
+  background-image: linear-gradient(-70deg, #e55561, #e2b86b);
 }
