@@ -20,8 +20,7 @@ bindsym $mod+Shift+q kill
 
 # start rofi launcher
 bindsym $mod+d exec --no-startup-id wofi --show run
-bindsym $mod+BackSpace exec --no-startup-id rofi -show window
-bindsym $mod+period exec --no-startup-id rofimoji
+bindsym $mod+period exec --no-startup-id wofi-emoji
 
 # rofi logout
 bindsym $mod+0 exec --no-startup-id bash $HOME/.config/rofi/powermenu.sh
