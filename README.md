@@ -9,20 +9,20 @@
 ---
 
 <h2><a href="https://github.com/andrewzn69/dotfiles/tree/catppuccin-i3">Catppuccin (i3)</a></h2>
-<p align=><img alt="screenshot" src="https://raw.githubusercontent.com/andrewzn69/dotfiles/catppuccin-i3/assets/main.png"></p>
+<p align=><img alt="screenshot" src="https://raw.githubusercontent.com/andrewzn69/dotfiles/assets/catppuccin-i3/main.png"></p>
 
 ---
 
 <h2><a href="https://github.com/andrewzn69/dotfiles/tree/onedarker-sway">OneDarker (sway)</a></h2>
-<p align=><img alt="screenshot" src="https://raw.githubusercontent.com/andrewzn69/dotfiles/onedarker-sway/assets/main.png"></p>
+<p align=><img alt="screenshot" src="https://raw.githubusercontent.com/andrewzn69/dotfiles/assets/onedarker-sway/main.png"></p>
 
 ---
 
 <h2><a href="https://github.com/andrewzn69/dotfiles/tree/nordish-i3">Nordish (i3)</a></h2>
-<p align=><img alt="screenshot" src="https://raw.githubusercontent.com/andrewzn69/dotfiles/nordish-i3/screenshot.png"></p>
+<p align=><img alt="screenshot" src="https://raw.githubusercontent.com/andrewzn69/dotfiles/assets/nordish-i3/main.png"></p>
 
 ---
 
 <h2><a href="https://github.com/andrewzn69/dotfiles/tree/breaf-i3">Breaf (i3)</a></h2>
-<p align=><img alt="screenshot" src="https://raw.githubusercontent.com/andrewzn69/dotfiles/breaf-i3/screenshot.png"></p>
+<p align=><img alt="screenshot" src="https://raw.githubusercontent.com/andrewzn69/dotfiles/assets/breaf-i3/main.png"></p>
 </div>
