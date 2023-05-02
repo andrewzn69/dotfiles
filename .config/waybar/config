@@ -81,7 +81,7 @@
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "<span size='13000' foreground='#1B1F28'> </span>Disconnected",
 		"tooltip-format-wifi": "Signal Strength: {signalStrength}%",
-    "on-click": "rofi-wifi-menu",
+    "on-click": "wofi-wifi-menu",
 	},
 
 	"pulseaudio": {

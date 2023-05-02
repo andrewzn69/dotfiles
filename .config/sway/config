@@ -19,7 +19,7 @@ bindsym $mod+Return exec --no-startup-id kitty
 bindsym $mod+Shift+q kill
 
 # start rofi launcher
-bindsym $mod+d exec --no-startup-id rofi -show run
+bindsym $mod+d exec --no-startup-id wofi --show run
 bindsym $mod+BackSpace exec --no-startup-id rofi -show window
 bindsym $mod+period exec --no-startup-id rofimoji
 
