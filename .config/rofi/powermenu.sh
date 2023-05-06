@@ -77,10 +77,10 @@ case ${chosen} in
 		run_cmd --shutdown
         ;;
     $reboot)
-		run_cmd --reboot
+		reboot
         ;;
     $hibernate)
-		run_cmd --hibernate
+		hibernate
         ;;
     $lock)
 		if [[ -x '/usr/bin/betterlockscreen' ]]; then
