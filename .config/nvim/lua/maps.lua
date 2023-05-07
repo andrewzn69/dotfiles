@@ -32,3 +32,5 @@ keymap.set('n', '<C-w><left>', '<C-w><')
 keymap.set('n', '<C-w><right>', '<C-w>>')
 keymap.set('n', '<C-w><up>', '<C-w>+')
 keymap.set('n', '<C-w><down>', '<C-w>-')
+
+keymap.set('n', '<F6>', ':setlocal spell! spelllang=en_us<CR>')
