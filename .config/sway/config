@@ -1,31 +1,32 @@
-# Set mod key (Mod1=<Alt>, Mod4=<Super>)
+# set mod key
 set $mod Mod4
 
-# set default desktop layout (default is tiling)
-# workspace_layout tabbed <stacking|tabbed>
+## KEYBINDS
 
-# change borders
-bindsym $mod+u border none
-bindsym $mod+y border pixel 1
-bindsym $mod+n border normal
+# LAUNCHING PROGRAMS
 
-# Use Mouse+$mod to drag floating windows
-floating_modifier $mod
-
-# start a terminal
+# kitty
 bindsym $mod+Return exec --no-startup-id kitty
 
-# kill focused window
-bindsym $mod+Shift+q kill
-
-# start rofi launcher
+# wofi
 bindsym $mod+d exec --no-startup-id wofi --show run
 bindsym $mod+period exec --no-startup-id wofi-emoji
+# wofi logout
+# bindsym $mod+0 exec --no-startup-id bash $HOME/.config/rofi/powermenu.sh
 
-# rofi logout
-bindsym $mod+0 exec --no-startup-id bash $HOME/.config/rofi/powermenu.sh
+# firefox
+bindsym $mod+Shift+Return exec --no-startup-id firefox
 
-# XF86 controls
+# thunar
+bindsym $mod+m exec --no-startup-id 'thunar'
+
+# Screenshot
+bindsym Print exec --no-startup-id grimshot copy area
+
+# betterlockscreen
+# bindsym $mod+Shift+Tab exec --no-startup-id betterlockscreen --lock
+
+# XF86 Controls
 bindsym XF86AudioPlay exec --no-startup-id playerctl --player=spotify play-pause
 bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous
@@ -38,17 +39,36 @@ bindsym Shift+XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 1
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5
 bindsym Shift+XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 1
 
-# Swap Caps Lock and Escape
-input type:keyboard {
-    xkb_options caps:swapescape
-  }
+# change keyboard language
+bindsym $mod+Shift+t exec --no-startup-id bash $HOME/Development/bash-scripts/language_switch.sh 
 
-# Start Applications
-bindsym $mod+Shift+Return exec --no-startup-id MOZ_ENABLE_WAYLAND=1 firefox
-bindsym $mod+m exec --no-startup-id 'thunar'
+# WINDOW MANIPULATION
 
-# Screenshot
-bindsym Print exec --no-startup-id grimshot copy area 
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# toggle fullscreen
+bindsym $mod+f fullscreen toggle
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# split orientation
+bindsym $mod+q split toggle
+
+# move focused window to scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# show scratchpad window
+bindsym $mod+minus scratchpad show
+
+# drag floating windows
+floating_modifier $mod
+
+# change window layout
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
 
 # change focus
 bindsym $mod+h focus left
@@ -56,7 +76,6 @@ bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
-# alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
@@ -68,61 +87,55 @@ bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
-# alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# workspace back and forth (with/without active container)
+# resize window
+bindsym $mod+r mode "resize"
+mode "resize" {
+        bindsym h resize shrink width 5 px or 5 ppt
+        bindsym j resize grow height 5 px or 5 ppt
+        bindsym k resize shrink height 5 px or 5 ppt
+        bindsym l resize grow width 5 px or 5 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 5 px or 5 ppt
+        bindsym Down resize grow height 5 px or 5 ppt
+        bindsym Up resize shrink height 5 px or 5 ppt
+        bindsym Right resize grow width 5 px or 5 ppt
+
+        # exit resize mode
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+# rules for opening specific programs
+for_window [class="Polybar"] border pixel 0
+for_window [class="gwenview"] floating enable
+for_window [class="obsidian"] floating enable
+for_window [class="Thunar"] floating enable resize set 760 520, move position center
+for_window [title="zathura"] floating enable
+for_window [title="alsamixer"] floating enable border pixel 1
+for_window [title="File Transfer*"] floating enable
+for_window [class="Lightdm-settings"] floating enable
+for_window [class="Lxappearance"] floating enable sticky enable border normal
+for_window [class="Nitrogen"] floating enable sticky enable border normal
+for_window [class="Pavucontrol"] floating enable
+for_window [class="qt5ct"] floating enable sticky enable border normal
+for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
+for_window [class="Xfburn"] floating enable
+
+# WORKSPACES
+
+# switch to workspace with urgent window automatically
+for_window [urgent=latest] focus
+
+# workspace back and forth
 workspace_auto_back_and_forth yes
-bindsym $mod+b workspace back_and_forth
-bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
 
-# move focused workspace between monitors
-bindsym $mod+Ctrl+KP_6 move workspace to output right
-bindsym $mod+Ctrl+KP_4 move workspace to output left
-
-# split orientation
-bindsym $mod+g split g;exec --no-startup-id notify-send 'tile horizontally'
-bindsym $mod+v split v;exec --no-startup-id notify-send 'tile vertically'
-bindsym $mod+q split toggle
-
-# toggle fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
-
-# change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
-
-# toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
-
-# change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
-
-# toggle sticky
-bindsym $mod+Shift+s sticky toggle
-
-# focus the parent container
-bindsym $mod+a focus parent
-
-# move the currently focused window to the scratchpad
-bindsym $mod+Shift+minus move scratchpad
-
-# Show the next scratchpad window or hide the focused scratchpad window.
-# If there are multiple scratchpad windows, this command cycles through them.
-bindsym $mod+minus scratchpad show
-
-#navigate workspaces next / previous
-bindsym $mod+Ctrl+Right workspace next
-bindsym $mod+Ctrl+Left workspace prev
-
-# Workspace names
-# to display names or symbols instead of plain workspace numbers you can use
-# something like: set $ws1 1:mail
-#                 set $ws2 2:
+# workspace names
 set $ws1 1
 set $ws2 2
 set $ws3 3
@@ -131,6 +144,7 @@ set $ws5 5
 set $ws6 6
 set $ws7 7
 set $ws8 8
+set $ws9 9
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -142,7 +156,7 @@ bindsym $mod+6 workspace $ws6
 bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 
-# Move focused container to workspace
+# move focused window to workspace
 bindsym $mod+Ctrl+1 move container to workspace $ws1
 bindsym $mod+Ctrl+2 move container to workspace $ws2
 bindsym $mod+Ctrl+3 move container to workspace $ws3
@@ -152,7 +166,7 @@ bindsym $mod+Ctrl+6 move container to workspace $ws6
 bindsym $mod+Ctrl+7 move container to workspace $ws7
 bindsym $mod+Ctrl+8 move container to workspace $ws8
 
-# Move to workspace with focused container
+# move to workspace with focused window
 bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2; workspace $ws2
 bindsym $mod+Shift+3 move container to workspace $ws3; workspace $ws3
@@ -162,133 +176,62 @@ bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
 bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 
-# Open applications on specific workspaces
-assign [app_id="firefox"] workspace number 1
-assign [app_id="discord"] workspace number 2
-assign [app_id="telegram-desktop"] $ws2
-assign [app_id="spotify"] $ws6
+# assign programs to workspaces
+assign [class="firefox"] $ws1
+assign [class="TelegramDesktop"] $ws2
+assign [class="discord"] $ws2
+assign [class="Spotify"] $ws6
 
-# Open specific applications in floating mode
-for_window [app_id="obsidian"] floating enable
-for_window [app_id="thunar"] floating enable 
-for_window [title="zathura"] floating enable
-for_window [title="alsamixer"] floating enable border pixel 1
-for_window [title="File Transfer*"] floating enable
-for_window [app_id="Lxappearance"] floating enable sticky enable border normal
-for_window [app_id="pavucontrol"] floating enable
-for_window [app_id="qt5ct"] floating enable sticky enable border normal
-for_window [app_id="Qtconfig-qt4"] floating enable sticky enable border normal
-for_window [app_id="Simple-scan"] floating enable border normal
-for_window [app_id="(?i)System-config-printer.py"] floating enable border normal
-for_window [app_id="Timeset-gui"] floating enable border normal
-for_window [app_id="Xfburn"] floating enable
+# ETC.
 
-# switch to workspace with urgent window automatically
-# for_window [urgent=latest] focus
-
-# restart sway inplace (preserves your layout/session, can be used to upgrade sway)
+# restart sway
 bindsym $mod+Shift+r exec --no-startup-id swaymsg reload
 
-# change language
-bindsym $mod+Shift+t exec --no-startup-id bash ~/Development/bash-scripts/language_switch.sh 
+# swap caps lock and escape
+input type:keyboard {
+    xkb_options caps:swapescape
+  }
 
-# Resize window (you can also use the mouse for that)
-bindsym $mod+r mode "resize"
-mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 5 px or 5 ppt
-        bindsym k resize grow height 5 px or 5 ppt
-        bindsym l resize shrink height 5 px or 5 ppt
-        bindsym semicolon resize grow width 5 px or 5 ppt
+# enabling touchpad
+input 1739:52619:SYNA8004:00_06CB:CD8B_Touchpad tap enabled
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+# wallpaper
+output eDP-1 bg $HOME/Pictures/Wallpapers/flowies.png fill
 
-        # exit resize mode: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
+## STARTUP PROGRAMS
 
-# Lock screen
-bindsym $mod+9 exec --no-startup-id blurlock
-
-# Autostart applications
+# programs
 exec --no-startup-id waybar
 exec --no-startup-id spotify --enable-features=UseOzonePlatform --ozone-platform=wayland
 exec --no-startup-id syncthing -no-browser
-exec --no-startup-id python ~/Development/Python/mp3tagging.py
 exec --no-startup-id telegram-desktop
 exec --no-startup-id MOZ_ENABLE_WAYLAND=1 firefox
 
-output eDP-1 bg ~/Pictures/Wallpapers/flowies.png fill
+# scripts
+# huh?
 
-# Enabling touchpad
-input 1739:52619:SYNA8004:00_06CB:CD8B_Touchpad tap enabled
+## BORDERS
 
-#############################
-### settings for i3-gaps: ###
-#############################
+# smart borders
+smart_borders on
 
-# Set inner/outer gaps
+# set borders
+for_window [class=".*"] border pixel 2
+
+# font for window titles
+font xft:RobotoMono Nerd Font Bold 11
+
+# set gaps
 gaps inner 20
 gaps outer -2
 
-# Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
-# gaps inner|outer current|all set|plus|minus <px>
-# gaps inner all set 10
-# gaps outer all plus 5
-
-# Smart gaps (gaps used if only more than one container on the workspace)
+# smart gaps
 smart_gaps off
 
-# Borders
-for_window [app_id=".*"] border pixel 2
+
+## COLOURS
 
 # app_id                 border    bg        text      indicator child_border
 client.focused          #E06B74   #E06B74   #E06B74   #E06B74   #E06B74 
 client.unfocused        #2F333C   #2F333C   #2F333C   #2F333C   #2F333C
 client.focused_inactive #2F333C   #2F333C   #2F333C   #2F333C   #2F333C
-
-# Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
-set $mode_gaps Gaps: (o) outer, (i) inner
-set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
-set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
-bindsym $mod+Shift+g mode "$mode_gaps"
-
-mode "$mode_gaps" {
-        bindsym o      mode "$mode_gaps_outer"
-        bindsym i      mode "$mode_gaps_inner"
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-mode "$mode_gaps_inner" {
-        bindsym plus  gaps inner current plus 5
-        bindsym minus gaps inner current minus 5
-        bindsym 0     gaps inner current set 0
-
-        bindsym Shift+plus  gaps inner all plus 5
-        bindsym Shift+minus gaps inner all minus 5
-        bindsym Shift+0     gaps inner all set 0
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-mode "$mode_gaps_outer" {
-        bindsym plus  gaps outer current plus 5
-        bindsym minus gaps outer current minus 5
-        bindsym 0     gaps outer current set 0
-
-        bindsym Shift+plus  gaps outer all plus 5
-        bindsym Shift+minus gaps outer all minus 5
-        bindsym Shift+0     gaps outer all set 0
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
