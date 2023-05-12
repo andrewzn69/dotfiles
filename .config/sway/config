@@ -212,9 +212,6 @@ exec --no-startup-id MOZ_ENABLE_WAYLAND=1 firefox
 
 ## BORDERS
 
-# smart borders
-smart_borders on
-
 # set borders
 for_window [class=".*"] border pixel 2
 
