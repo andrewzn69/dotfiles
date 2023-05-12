@@ -27,7 +27,7 @@ unset RPROMPT
 
 # alias for yay/pacman
 alias ins="yay -S"
-alias un="yay -R"
+alias un="yay -Rns"
 alias up='yay -Syyu'
 
 # git alias for my dotfiles folder
