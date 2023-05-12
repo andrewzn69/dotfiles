@@ -6,42 +6,40 @@ lspkind.init({
   --
   -- default: true
   mode = 'symbol',
-
   -- default symbol map
   -- can be either 'default' (requires nerd-fonts font) or
   -- 'codicons' for codicon preset (requires vscode-codicons font)
   --
   -- default: 'default'
   preset = 'codicons',
-
   -- override preset symbols
   --
   -- default: {}
   symbol_map = {
-    Text = "",
-    Method = "",
-    Function = "",
+    Text = "",
+    Method = "󰆧",
+    Function = "󰊕 ",
     Constructor = "",
-    Field = "ﰠ",
-    Variable = "",
-    Class = "ﴯ",
+    Field = "󰜢",
+    Variable = "󰀫",
+    Class = "󰠱",
     Interface = "",
-    Module = "",
-    Property = "ﰠ",
-    Unit = "塞",
-    Value = "",
-    Enum = "",
-    Keyword = "",
+    Module = "",
+    Property = "󰜢",
+    Unit = "󰑭",
+    Value = "",
+    Enum = "",
+    Keyword = "󰌋",
     Snippet = "",
-    Color = "",
-    File = "",
-    Reference = "",
-    Folder = "",
+    Color = "",
+    File = "",
+    Reference = "󰗽",
+    Folder = "󰉋",
     EnumMember = "",
-    Constant = "",
-    Struct = "פּ",
+    Constant = "",
+    Struct = "",
     Event = "",
-    Operator = "",
+    Operator = "󱓉",
     TypeParameter = ""
   },
 })
