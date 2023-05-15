@@ -11,18 +11,19 @@ packer.startup(function(use)
   use 'rafamadriz/friendly-snippets'
   use 'navarasu/onedark.nvim'
 
-  use 'nvim-lualine/lualine.nvim' -- Statusline
-  use 'nvim-lua/plenary.nvim' -- Common utilities
-  use 'onsails/lspkind-nvim' -- vscode-like pictograms
+  use 'nvim-lualine/lualine.nvim'           -- Statusline
+  use 'nvim-lua/plenary.nvim'               -- Common utilities
+  use 'onsails/lspkind-nvim'                -- vscode-like pictograms
+  use 'lukas-reineke/indent-blankline.nvim' -- indent lines
 
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-cmdline'
-  use 'hrsh7th/cmp-buffer' -- nvim-cmp ource for buffer words
+  use 'hrsh7th/cmp-buffer'              -- nvim-cmp ource for buffer words
   use 'hrsh7th/cmp-vsnip'
-  use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp source for neovim's built-in LSP
-  use 'hrsh7th/nvim-cmp' -- Completion
+  use 'hrsh7th/cmp-nvim-lsp'            -- nvim-cmp source for neovim's built-in LSP
+  use 'hrsh7th/nvim-cmp'                -- Completion
   use 'hrsh7th/vim-vsnip'
-  use 'neovim/nvim-lspconfig' -- LSP
+  use 'neovim/nvim-lspconfig'           -- LSP
   use 'jose-elias-alvarez/null-ls.nvim' -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
