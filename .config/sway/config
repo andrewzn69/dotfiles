@@ -15,7 +15,7 @@ bindsym $mod+period exec --no-startup-id wofi-emoji
 # bindsym $mod+0 exec --no-startup-id bash $HOME/.config/rofi/powermenu.sh
 
 # firefox
-bindsym $mod+Shift+Return exec --no-startup-id firefox
+bindsym $mod+Shift+Return exec --no-startup-id MOZ_ENABLE_WAYLAND=1 firefox
 
 # thunar
 bindsym $mod+m exec --no-startup-id 'thunar'
