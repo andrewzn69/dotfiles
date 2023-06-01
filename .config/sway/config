@@ -23,6 +23,9 @@ bindsym $mod+m exec --no-startup-id 'thunar'
 # Screenshot
 bindsym Print exec --no-startup-id grimshot copy area
 
+# Swaylock
+bindsym $mod+Shift+Tab exec --no-startup-id swaylock
+
 # betterlockscreen
 # bindsym $mod+Shift+Tab exec --no-startup-id betterlockscreen --lock
 
