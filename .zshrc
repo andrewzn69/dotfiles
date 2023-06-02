@@ -2,6 +2,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 export PATH=/home/zimn/.cargo/bin:$PATH
 export EDITOR=nvim
+eval "$(antidot init)"
 
 # pfetch
 export PF_INFO="ascii title os uptime pkgs"
