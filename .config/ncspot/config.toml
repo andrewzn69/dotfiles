@@ -1,0 +1,6 @@
+audio_cache = true
+volnorm = true
+use_nerdfont = true
+bitrate = 320
+gapless = true
+repeat = "playlist"
