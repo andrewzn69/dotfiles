@@ -1,5 +1,18 @@
 external-url-viewer "urlview"
 
+# feed options
+auto-reload yes
+reload-time 60
+reload-threads 8
+download-retries 2
+download-timeout 10
+download-full-page yes
+scrolloff 11
+always-display-description true
+text-width 120
+goto-next-feed no
+
+# keybindings
 bind-key j down
 bind-key k up
 bind-key j next articlelist
@@ -18,9 +31,16 @@ bind-key N prev-unread
 bind-key D pb-download
 bind-key U show-urls
 bind-key x pb-delete
+bind-key ENTER open-in-browser
 
+browser "(firefox %u >/dev/null 2>&1) &"
+macro o set browser "mpv %u &> /dev/null &" ; open-in-browser ; set browser "elinks %u"
+
+# colors
 color listfocus white red
 color listfocus_unread white red bold
 color title red black
 color info yellow black
 color hint-key yellow black
+
+feedlist-format "%?T?║%n %12u %t &╠ %t?"
