@@ -220,6 +220,7 @@ exec swaymsg $ws6; exec kitty -e ncspot
 exec --no-startup-id syncthing -no-browser
 exec --no-startup-id telegram-desktop
 exec --no-startup-id MOZ_ENABLE_WAYLAND=1 firefox
+exec --no-startup-id autotiling &
 
 # scripts
 # huh?
