@@ -200,6 +200,16 @@ input 1739:52619:SYNA8004:00_06CB:CD8B_Touchpad tap enabled
 # wallpaper
 output eDP-1 bg $HOME/Pictures/Wallpapers/flowies.png fill
 
+
+set $gnome-schema org.gnome.desktop.interface
+
+exec_always {
+    gsettings set $gnome-schema gtk-theme 'adwaita-negr'
+    gsettings set $gnome-schema icon-theme 'Adwaita'
+    gsettings set $gnome-schema cursor-theme 'Adwaita'
+    gsettings set $gnome-schema cursor-size '28'
+}
+
 ## STARTUP PROGRAMS
 
 # programs
