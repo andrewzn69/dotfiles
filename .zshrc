@@ -35,12 +35,11 @@ alias up='yay -Syyu'
 alias dotfiles='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
 # alias for nvim
-alias v="nvim"
 alias vim="nvim"
 alias vi="nvim"
 alias oldvim="vim"
 
-# alias for youtube-dl
+# alias for youtube-dlp
 alias mp3='yt-dlp --extract-audio --audio-format mp3'
 alias mp4='yt-dlp -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4"'
 
