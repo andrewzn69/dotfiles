@@ -131,6 +131,7 @@ for_window [class="Xfburn"] floating enable
 # reserve workspaces
 workspace 1 output HDMI-A-0
 workspace 2 output DisplayPort-1
+workspace 4 output DisplayPort-1
 workspace 6 output HDMI-A-0
 
 # switch to workspace with urgent window automatically
@@ -183,7 +184,7 @@ bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 # assign programs to workspaces
 assign [class="firefox"] $ws1
 assign [class="TelegramDesktop"] $ws2
-assign [class="discord"] $ws2
+assign [class="discordo"] $ws4
 assign [class="Spotify"] $ws6
 
 # ETC.
@@ -202,7 +203,7 @@ bindsym $mod+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'You pressed 
 
 # programs
 exec_always --no-startup-id numlockx on
-exec --no-startup-id discord
+exec --no-startup-id kitty -e discordo
 exec --no-startup-id firefox
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id picom -b
@@ -213,7 +214,7 @@ exec --no-startup-id pa-applet
 # scripts
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec --no-startup-id bash $HOME/.screenlayout/brumomento.sh
-exec --no-startup-id bash $HOME/.config/xborders/xborders -c ~/.config/xborders/config.json
+exec --no-startup-id python3 $HOME/.config/xborders/xborders -c $HOME/.config/xborders/config.json
 exec --no-startup-id LD_PRELOAD=~/.config/spotifywm/spotifywm.so /usr/bin/spotify
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id syncthing -no-browser
