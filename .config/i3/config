@@ -199,7 +199,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 
-## STARTUP PROGRAMS
+## STARTUP/AUTOLAUNCH PROGRAMS
 
 # programs
 exec_always --no-startup-id numlockx on
@@ -210,6 +210,7 @@ exec --no-startup-id picom -b
 exec --no-startup-id pulseeffects -l bassss
 exec --no-startup-id start-pulseaudio-x11
 exec --no-startup-id pa-applet
+exec --no-startup-id autotiling &
 
 # scripts
 exec_always --no-startup-id ~/.config/polybar/launch.sh
