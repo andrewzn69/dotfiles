@@ -119,7 +119,6 @@ for_window [class="Polybar"] border pixel 0
 for_window [class="gwenview"] floating enable
 for_window [class="obsidian"] floating enable
 for_window [class="Thunar"] floating enable resize set 760 520, move position center
-for_window [title="zathura"] floating enable
 for_window [title="alsamixer"] floating enable border pixel 1
 for_window [title="File Transfer*"] floating enable
 for_window [class="Lightdm-settings"] floating enable
@@ -204,10 +203,7 @@ output eDP-1 bg $HOME/Pictures/Wallpapers/flowies.png fill
 set $gnome-schema org.gnome.desktop.interface
 
 exec_always {
-    gsettings set $gnome-schema gtk-theme 'adwaita-negr'
-    gsettings set $gnome-schema icon-theme 'Adwaita'
-    gsettings set $gnome-schema cursor-theme 'Adwaita'
-    gsettings set $gnome-schema cursor-size '28'
+    gsettings set $gnome-schema gtk-theme 'adw-gtk3-onedark'
 }
 
 ## STARTUP PROGRAMS
