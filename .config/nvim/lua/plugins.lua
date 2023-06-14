@@ -59,4 +59,6 @@ packer.startup(function(use)
   use 'dinhhuy258/git.nvim' -- For git blame & browse
 
   use 'Eandrju/cellular-automaton.nvim'
+
+  use 'kaarmu/typst.vim' -- typst
 end)
