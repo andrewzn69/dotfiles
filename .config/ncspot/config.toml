@@ -4,3 +4,21 @@ use_nerdfont = true
 bitrate = 320
 gapless = true
 repeat = "playlist"
+
+[keybindings]
+
+# music constols
+"Space" = "playpause"
+
+# navigation
+"G" = "move down 99999"
+"g" = "move up 99999"
+"Esc" = "back"
+
+# sharing
+"Y" = "share selected"
+"y" = "share current"
+
+# other
+"?" = "help"
+"U" = "update"
