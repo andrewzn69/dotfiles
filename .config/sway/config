@@ -42,8 +42,20 @@ bindsym Shift+XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 1
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5
 bindsym Shift+XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 1
 
+# INPUTS
+
 # change keyboard language
-bindsym $mod+Shift+t exec --no-startup-id bash $HOME/Development/bash-scripts/language_switch.sh 
+input "type:keyboard" {
+    xkb_layout us,cz
+    xkb_options caps:swapescape
+    # what the fuck????????????????? xkb_options grp:shift_alt_toggle does not work for some stupid reason, fuck wayland
+}
+    bindsym $mod+Shift+t input type:keyboard xkb_switch_layout next
+
+
+input "1739:52619:SYNA8004:00_06CB:CD8B_Touchpad" {
+  tap enabled
+}
 
 # WINDOW MANIPULATION
 
@@ -188,13 +200,7 @@ assign [app_id="thunar"] $ws4
 # restart sway
 bindsym $mod+Shift+r exec --no-startup-id swaymsg reload
 
-# swap caps lock and escape
-input type:keyboard {
-    xkb_options caps:swapescape
-  }
-
 # enabling touchpad
-input 1739:52619:SYNA8004:00_06CB:CD8B_Touchpad tap enabled
 
 # wallpaper
 output eDP-1 bg $HOME/Pictures/Wallpapers/flowies.png fill
