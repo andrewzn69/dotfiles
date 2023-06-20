@@ -6,41 +6,41 @@ set $mod Mod4
 # LAUNCHING PROGRAMS
 
 # kitty
-bindsym $mod+Return exec --no-startup-id kitty
+bindsym $mod+Return exec kitty
 
 # wofi
-bindsym $mod+d exec --no-startup-id wofi --show run
-bindsym $mod+period exec --no-startup-id wofi-emoji
+bindsym $mod+d exec wofi --show run
+bindsym $mod+period exec wofi-emoji
 # wofi logout
-# bindsym $mod+0 exec --no-startup-id bash $HOME/.config/rofi/powermenu.sh
+# bindsym $mod+0 exec bash $HOME/.config/rofi/powermenu.sh
 
 # firefox
-bindsym $mod+Shift+Return exec --no-startup-id MOZ_ENABLE_WAYLAND=1 firefox
+bindsym $mod+Shift+Return exec MOZ_ENABLE_WAYLAND=1 firefox
 
 # thunar
-bindsym $mod+m exec --no-startup-id 'thunar'
+bindsym $mod+m exec 'thunar'
 
 # Screenshot
-bindsym Print exec --no-startup-id grimshot copy area
+bindsym Print exec grimshot copy area
 
 # Swaylock
-bindsym $mod+Shift+Tab exec --no-startup-id swaylock
+bindsym $mod+Shift+Tab exec swaylock
 
 # betterlockscreen
-# bindsym $mod+Shift+Tab exec --no-startup-id betterlockscreen --lock
+# bindsym $mod+Shift+Tab exec betterlockscreen --lock
 
 # XF86 Controls
-bindsym XF86AudioPlay exec --no-startup-id playerctl --player=ncspot play-pause
-bindsym XF86AudioNext exec --no-startup-id playerctl next
-bindsym XF86AudioPrev exec --no-startup-id playerctl previous
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -1%
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +1%
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
-bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5
-bindsym Shift+XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 1
-bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5
-bindsym Shift+XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 1
+bindsym XF86AudioPlay exec playerctl --player=ncspot play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -1%
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +1%
+bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym XF86MonBrightnessUp exec xbacklight -inc 5
+bindsym Shift+XF86MonBrightnessUp exec xbacklight -inc 1
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5
+bindsym Shift+XF86MonBrightnessDown exec xbacklight -dec 1
 
 # INPUTS
 
@@ -198,7 +198,7 @@ assign [app_id="thunar"] $ws4
 # ETC.
 
 # restart sway
-bindsym $mod+Shift+r exec --no-startup-id swaymsg reload
+bindsym $mod+Shift+r exec swaymsg reload
 
 # enabling touchpad
 
@@ -216,13 +216,13 @@ exec_always {
 
 # programs
 exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
-exec --no-startup-id pipewire-pulse
-exec --no-startup-id waybar
+exec pipewire-pulse
+exec waybar
 exec swaymsg $ws6; exec kitty -e ncspot
-exec --no-startup-id syncthing -no-browser
-exec --no-startup-id telegram-desktop
-exec --no-startup-id MOZ_ENABLE_WAYLAND=1 firefox
-exec --no-startup-id autotiling &
+exec syncthing -no-browser
+exec telegram-desktop
+exec MOZ_ENABLE_WAYLAND=1 firefox
+exec autotiling &
 
 # scripts
 # huh?
