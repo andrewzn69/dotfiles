@@ -26,9 +26,6 @@ bindsym Print exec grimshot copy area
 # Swaylock
 bindsym $mod+Shift+Tab exec swaylock
 
-# betterlockscreen
-# bindsym $mod+Shift+Tab exec betterlockscreen --lock
-
 # XF86 Controls
 bindsym XF86AudioPlay exec playerctl --player=ncspot play-pause
 bindsym XF86AudioNext exec playerctl next
@@ -127,7 +124,6 @@ mode "resize" {
 }
 
 # rules for opening specific programs
-for_window [class="Polybar"] border pixel 0
 for_window [class="gwenview"] floating enable
 for_window [class="obsidian"] floating enable
 for_window [class="Thunar"] floating enable resize set 760 520, move position center
@@ -205,24 +201,28 @@ bindsym $mod+Shift+r exec swaymsg reload
 # wallpaper
 output eDP-1 bg $HOME/Pictures/Wallpapers/flowies.png fill
 
-
-set $gnome-schema org.gnome.desktop.interface
-
-exec_always {
-    gsettings set $gnome-schema gtk-theme 'adw-gtk3-onedark'
-}
-
 ## STARTUP PROGRAMS
 
 # programs
 exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
 exec pipewire-pulse
-exec waybar
 exec swaymsg $ws6; exec kitty -e ncspot
 exec syncthing -no-browser
 exec telegram-desktop
 exec MOZ_ENABLE_WAYLAND=1 firefox
 exec autotiling &
+exec easyeffects &
+
+bar {
+    swaybar_command waybar
+  }
+
+# idk, gnome?
+set $gnome-schema org.gnome.desktop.interface
+
+exec_always {
+    gsettings set $gnome-schema gtk-theme 'adw-gtk3-onedark'
+}
 
 # scripts
 # huh?
