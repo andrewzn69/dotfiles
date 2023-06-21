@@ -46,7 +46,7 @@ bindsym Shift+XF86MonBrightnessDown exec xbacklight -dec 1
 
 # change keyboard language
 input "type:keyboard" {
-    xkb_layout us,cz
+    xkb_layout us,cz(qwerty)
     xkb_options caps:swapescape
     # what the fuck????????????????? xkb_options grp:shift_alt_toggle does not work for some stupid reason, fuck wayland
 }
