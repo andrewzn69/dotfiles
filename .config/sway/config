@@ -211,7 +211,7 @@ exec syncthing -no-browser
 exec telegram-desktop
 exec MOZ_ENABLE_WAYLAND=1 firefox
 exec autotiling &
-exec easyeffects &
+exec easyeffects  --gapplication-service -l 'default'
 
 bar {
     swaybar_command waybar
