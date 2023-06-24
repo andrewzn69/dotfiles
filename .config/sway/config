@@ -21,7 +21,7 @@ bindsym $mod+Shift+Return exec MOZ_ENABLE_WAYLAND=1 firefox
 bindsym $mod+m exec 'thunar'
 
 # Screenshot
-bindsym Print exec grimshot copy area
+bindsym Print exec swayshot region
 
 # Swaylock
 bindsym $mod+Shift+Tab exec swaylock
@@ -190,6 +190,7 @@ bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 assign [app_id="firefox"] $ws1
 assign [app_id="telegram"] $ws2
 assign [app_id="thunar"] $ws4
+assign [app_id="ncspot"] $ws6
 
 # ETC.
 
