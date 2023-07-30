@@ -1,0 +1,146 @@
+{
+    // waybar at top layer
+    "layer": "top", 
+
+    // waybar position (top|bottom|left|right)
+    "position": "top", 
+    "height": "auto", 
+
+    // gaps between modules (4px)
+    "spacing": 5, 
+
+    // choose the order of the modules
+    // "margin-left":25,
+    // "margin-right":25,
+    "margin-bottom":-11,
+    //"margin-top":5,
+    "modules-left": ["wlr/workspaces"],
+    "modules-right": ["memory","disk","custom/ss","custom/cycle_wall","custom/expand","clock"],
+    "modules-center": ["custom/playerlabel"],
+    // Modules configuration
+
+
+    // custom modules ////////////////
+
+    "custom/playerlabel": {
+      "format": "<span>{}</span>",
+      "return-type": "json",
+      "max-length": 48,
+      "exec": "$HOME/.config/hypr/scripts/waybar/mediaplayer.sh",
+      "on-click-middle": "playerctl play-pause",
+      "on-click": "playerctl previous",
+      "on-click-right": "playerctl next",
+      "format-icons": {
+        "Playing": "<span foreground='#E5B9C6'>󰒮 󰐌 󰒭</span>",
+        "Paused": "<span foreground='#928374'>󰒮 󰏥 󰒭</span>"
+      },
+    },
+
+    "custom/ss":{
+        "format":"{}",
+        "exec":"~/.config/hypr/scripts/tools/expand ss-icon",
+        "on-click": "~/.config/hypr/scripts/screenshot_full"
+    },
+    "custom/cycle_wall":{
+        "format":"{}",
+        "exec": "~/.config/hypr/scripts/tools/expand wall",
+        // "interval": 1,
+        "on-click": "~/.config/hypr/scripts/tools/expand cycle"
+    },
+    "custom/expand":{
+        "on-click":"~/.config/hypr/scripts/expand_toolbar",
+        "format":"{}",
+        "exec":"~/.config/hypr/scripts/tools/expand arrow-icon"
+    },
+    "wlr/workspaces": {
+        "format": "{icon}",
+        "format-active": " {icon} ",
+        "on-click": "activate"
+    },
+    "mpd": {
+        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
+        "format-disconnected": "Disconnected ",
+        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+        "unknown-tag": "N/A",
+        "interval": 2,
+        "consume-icons": {
+            "on": " "
+        },
+        "random-icons": {
+            "off": "<span color=\"#f53c3c\"></span> ",
+            "on": " "
+        },
+        "repeat-icons": {
+            "on": " "
+        },
+        "single-icons": {
+            "on": "1 "
+        },
+        "state-icons": {
+            "paused": "",
+            "playing": ""
+        },
+        "tooltip-format": "MPD (connected)",
+        "tooltip-format-disconnected": "MPD (disconnected)"
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+    "clock": {
+        // "timezone": "Europe/Prague",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "interval": 60,
+        "format": "{:%H:%M}",
+        "max-length": 25
+    },
+    "memory": {
+        "format": "{used}GB"
+    },
+    "disk": {
+        "format": "{free}"
+    },
+    "temperature": {
+        // "thermal-zone": 2,
+        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        "format-critical": "{temperatureC}°C",
+        "format": ""
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "custom/media": {
+        "format": "{icon} {}",
+        "return-type": "json",
+        "max-length": 40,
+        "format-icons": {
+            "spotify": "",
+            "default": "🎜"
+        },
+        "escape": true,
+        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    }
+}
