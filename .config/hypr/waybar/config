@@ -97,12 +97,13 @@
     "clock": {
         // "timezone": "Europe/Prague",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "interval": 60,
+        "interval": 30,
         "format": "{:%H:%M}",
         "max-length": 25
     },
     "memory": {
-        "format": "{used}GB"
+        "format": "{used}GB",
+        "interval": 2,
     },
     "disk": {
         "format": "{free}"
