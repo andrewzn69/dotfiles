@@ -25,6 +25,7 @@ alias mp4='yt-dlp -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4"'
 
 # useful shit
 alias mkdir='mkdir -p'
-alias la='ls -a'
+alias l='ls -lha'
 alias freeram="sudo sh -c 'sync; echo 3 > /proc/sys/vm/drop_caches'"
 alias bm='sh $HOME/.config/hypr/scripts/bookmarks'
+alias wttr='curl wttr.in'
