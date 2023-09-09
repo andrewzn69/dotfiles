@@ -1,3 +1,5 @@
+## OHMYZSH
+
 # plugins
 plugins=(
 git
