@@ -83,16 +83,28 @@ nvim_lsp.tsserver.setup {
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-local servers = { 'clangd', 'cssls', 'html', 'omnisharp' }
+local servers = { 'clangd', 'cssls', 'html', 'omnisharp', 'typst_lsp' }
 for _, lsp in pairs(servers) do
   require('lspconfig')[lsp].setup {
-    on_attach = on_attach,
+    on_attach = function(client, bufnr)
+      client.server_capabilities.semanticTokensProvider = nil
+    end,
     capabilities = capabilities,
     flags = {
       debounce_text_changes = 150,
     }
   }
 end
+
+nvim_lsp.typst_lsp.setup {
+  on_attach = on_attach,
+  filetypes = { "typst" },
+  cmd = { "typst-lsp" },
+  capabilities = capabilities,
+  settings = {
+    exportPdf = "onType"
+  }
+}
 
 nvim_lsp.sourcekit.setup {
   on_attach = on_attach,

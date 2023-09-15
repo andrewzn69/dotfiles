@@ -27,12 +27,9 @@ packer.startup(function(use)
   use 'jose-elias-alvarez/null-ls.nvim' -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
+  use 'nvim-treesitter/nvim-treesitter'
 
-  use 'glepnir/lspsaga.nvim' -- LSP UIs
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
-  }
+  use 'glepnir/lspsaga.nvim'         -- LSP UIs
   use 'kyazdani42/nvim-web-devicons' -- File icons
   use 'nvim-telescope/telescope.nvim'
   use 'nvim-telescope/telescope-file-browser.nvim'
@@ -51,7 +48,8 @@ packer.startup(function(use)
   })
   use 'akinsho/nvim-bufferline.lua'
   -- use 'github/copilot.vim'
-  use 'andweeb/presence.nvim' -- Rich Presence For Discord
+  use 'sindrets/diffview.nvim' -- git diff tool
+  use 'andweeb/presence.nvim'  -- Rich Presence For Discord
 
   use 'aurum77/live-server.nvim'
 

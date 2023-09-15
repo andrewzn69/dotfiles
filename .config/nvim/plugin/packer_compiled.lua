@@ -124,6 +124,11 @@ _G.packer_plugins = {
     path = "/home/zimn/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
+  ["indent-blankline.nvim"] = {
+    loaded = true,
+    path = "/home/zimn/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
+    url = "https://github.com/lukas-reineke/indent-blankline.nvim"
+  },
   ["live-server.nvim"] = {
     loaded = true,
     path = "/home/zimn/.local/share/nvim/site/pack/packer/start/live-server.nvim",
@@ -238,6 +243,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/zimn/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["typst.vim"] = {
+    loaded = true,
+    path = "/home/zimn/.local/share/nvim/site/pack/packer/start/typst.vim",
+    url = "https://github.com/kaarmu/typst.vim"
   },
   ["vim-vsnip"] = {
     loaded = true,
