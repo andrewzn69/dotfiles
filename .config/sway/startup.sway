@@ -1,0 +1,44 @@
+## STARTUP
+
+# reset XDPH for screenshare
+exec ~/.config/sway/scripts/resetxdgportal.sh
+
+# for XDPH
+exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP
+exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+
+# authentication dialogue for gui programs
+exec /usr/lib/polkit-kde-authentication-agent-1
+
+# restart pipewire
+exec systemctl --user restart pipewire
+
+# clipboard store text data
+exec wl-paste --type text --watch cliphist store
+
+# clipboard store image data
+exec wl-paste --type image --watch cliphist store
+
+# PROGRAMS
+
+# bar
+bar {
+    swaybar_command waybar
+  }
+
+# notification daemon
+#exec dunst
+
+# etc.
+exec syncthing -no-browser
+exec kotatogram-desktop
+exec firefox
+exec autotiling &
+
+# idk, gnome?
+set $gnome-schema org.gnome.desktop.interface
+
+exec_always {
+    gsettings set $gnome-schema gtk-theme 'adw-gtk3-onedark'
+}
+# vim: set ft=swayconfig:

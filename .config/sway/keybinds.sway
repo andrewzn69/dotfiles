@@ -1,0 +1,171 @@
+## KEYBINDS
+
+# variables
+set $scriptsDir $HOME/.config/sway/scripts
+set $bgDir $HOME/.wallpapers
+
+# program variables
+set $term kitty
+set $volume $scriptsDir/volume
+set $screenshot $scriptsDir/screensht
+set $colorpicker $scriptsDir/colorpicker
+set $files thunar
+set $browser firefox
+
+# restart sway
+bindsym $mod+Shift+r exec swaymsg reload
+
+# LAUNCHING PROGRAMS
+
+# terminal
+bindsym $mod+Return exec $term
+
+# firefox
+bindsym $mod+Shift+Return exec MOZ_ENABLE_WAYLAND=1 $browser
+
+# file manager
+bindsym $mod+m exec $files
+
+# wofi
+bindsym $mod+d exec wofi --show run
+bindsym $mod+period exec wofi-emoji
+# wofi logout
+# bindsym $mod+0 exec bash $HOME/.config/rofi/powermenu.sh
+
+# screenshot
+bindsym Print exec $screenshot area
+bindsym Shift+Print exec $screenshot full
+
+# swaylock
+bindsym $mod+Shift+Tab exec swaylock
+
+# LAUNCHING SCRIPTS
+
+# color picker
+bindsym $mod+Shift+x exec $colorpicker
+
+# XF86 Controls
+bindsym XF86AudioPlay exec playerctl --player=ncspot play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -1%
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +1%
+bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym XF86MonBrightnessUp exec xbacklight -inc 5
+bindsym Shift+XF86MonBrightnessUp exec xbacklight -inc 1
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5
+bindsym Shift+XF86MonBrightnessDown exec xbacklight -dec 1
+
+# WINDOW MANIPULATION
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# toggle fullscreen
+bindsym $mod+f fullscreen toggle
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# split orientation
+bindsym $mod+q split toggle
+
+# move focused window to scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# show scratchpad window
+bindsym $mod+minus scratchpad show
+
+# drag floating windows
+floating_modifier $mod
+
+# change window layout
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# resize window
+bindsym $mod+r mode "resize"
+mode "resize" {
+        bindsym h resize shrink width 5 px or 5 ppt
+        bindsym j resize grow height 5 px or 5 ppt
+        bindsym k resize shrink height 5 px or 5 ppt
+        bindsym l resize grow width 5 px or 5 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 5 px or 5 ppt
+        bindsym Down resize grow height 5 px or 5 ppt
+        bindsym Up resize shrink height 5 px or 5 ppt
+        bindsym Right resize grow width 5 px or 5 ppt
+
+        # exit resize mode
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+
+# workspace names
+set $ws1 1
+set $ws2 2
+set $ws3 3
+set $ws4 4
+set $ws5 5
+set $ws6 6
+set $ws7 7
+set $ws8 8
+set $ws9 9
+
+# switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+
+# move focused window to workspace
+bindsym $mod+Ctrl+1 move container to workspace $ws1
+bindsym $mod+Ctrl+2 move container to workspace $ws2
+bindsym $mod+Ctrl+3 move container to workspace $ws3
+bindsym $mod+Ctrl+4 move container to workspace $ws4
+bindsym $mod+Ctrl+5 move container to workspace $ws5
+bindsym $mod+Ctrl+6 move container to workspace $ws6
+bindsym $mod+Ctrl+7 move container to workspace $ws7
+bindsym $mod+Ctrl+8 move container to workspace $ws8
+
+# move to workspace with focused window
+bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2; workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3; workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4; workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5; workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
+
+# vim: set ft=swayconfig:

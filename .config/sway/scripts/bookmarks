@@ -1,0 +1,14 @@
+#!/bin/sh
+
+#Replace all occurrences of /home/user/Documents/bookmarks/ with the full path to your bookmarks folder
+
+link=$(find /home/zimn/bookmarks/ -type f | sed 's;/home/zimn/bookmarks/;;g' | fzf | sed -e 's;^;/home/zimn/bookmarks/;g' -e 's/ /\\ /g' | xargs -r sed 1q)
+
+if echo $link | grep -q .onion ; then
+   echo $link | xclip -sel clip;
+   notify-send -i /usr/share/icons/Papirus/64x64/apps/xclipboard.svg "The .onion link has been copied to clipboard. Paste it into the Tor Browser" ;
+else
+   nohup xdg-open $link > /dev/null ;
+   PPPID=$(awk '{print $4}' "/proc/$PPID/stat");
+   kill $PPPID;
+fi

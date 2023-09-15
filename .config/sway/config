@@ -1,43 +1,11 @@
 # set mod key
 set $mod Mod4
 
-## KEYBINDS
-
-# LAUNCHING PROGRAMS
-
-# kitty
-bindsym $mod+Return exec kitty
-
-# wofi
-bindsym $mod+d exec wofi --show run
-bindsym $mod+period exec wofi-emoji
-# wofi logout
-# bindsym $mod+0 exec bash $HOME/.config/rofi/powermenu.sh
-
-# firefox
-bindsym $mod+Shift+Return exec MOZ_ENABLE_WAYLAND=1 firefox
-
-# thunar
-bindsym $mod+m exec 'thunar'
-
-# Screenshot
-bindsym Print exec swayshot region
-
-# Swaylock
-bindsym $mod+Shift+Tab exec swaylock
-
-# XF86 Controls
-bindsym XF86AudioPlay exec playerctl --player=ncspot play-pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
-bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -1%
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +1%
-bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
-bindsym XF86MonBrightnessUp exec xbacklight -inc 5
-bindsym Shift+XF86MonBrightnessUp exec xbacklight -inc 1
-bindsym XF86MonBrightnessDown exec xbacklight -dec 5
-bindsym Shift+XF86MonBrightnessDown exec xbacklight -dec 1
+# env var
+include ~/.config/sway/startup.sway
+include ~/.config/sway/env.sway
+include ~/.config/sway/windowrule.sway
+include ~/.config/sway/keybinds.sway
 
 # INPUTS
 
@@ -49,184 +17,13 @@ input "type:keyboard" {
 }
     bindsym $mod+Shift+t input type:keyboard xkb_switch_layout next
 
-
+# enabling touchpad
 input "1739:52619:SYNA8004:00_06CB:CD8B_Touchpad" {
   tap enabled
 }
 
-# WINDOW MANIPULATION
-
-# kill focused window
-bindsym $mod+Shift+q kill
-
-# toggle fullscreen
-bindsym $mod+f fullscreen toggle
-
-# toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
-
-# split orientation
-bindsym $mod+q split toggle
-
-# move focused window to scratchpad
-bindsym $mod+Shift+minus move scratchpad
-
-# show scratchpad window
-bindsym $mod+minus scratchpad show
-
-# drag floating windows
-floating_modifier $mod
-
-# change window layout
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
-
-# change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
-
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
-
-# move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
-
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
-
-# resize window
-bindsym $mod+r mode "resize"
-mode "resize" {
-        bindsym h resize shrink width 5 px or 5 ppt
-        bindsym j resize grow height 5 px or 5 ppt
-        bindsym k resize shrink height 5 px or 5 ppt
-        bindsym l resize grow width 5 px or 5 ppt
-
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 5 px or 5 ppt
-        bindsym Down resize grow height 5 px or 5 ppt
-        bindsym Up resize shrink height 5 px or 5 ppt
-        bindsym Right resize grow width 5 px or 5 ppt
-
-        # exit resize mode
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-
-# rules for opening specific programs
-for_window [class="gwenview"] floating enable
-for_window [class="obsidian"] floating enable
-for_window [class="Thunar"] floating enable resize set 760 520, move position center
-for_window [title="alsamixer"] floating enable border pixel 1
-for_window [title="File Transfer*"] floating enable
-for_window [class="Lightdm-settings"] floating enable
-for_window [class="Lxappearance"] floating enable sticky enable border normal
-for_window [class="Nitrogen"] floating enable sticky enable border normal
-for_window [class="Pavucontrol"] floating enable
-for_window [class="qt5ct"] floating enable sticky enable border normal
-for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
-for_window [class="Xfburn"] floating enable
-
-# WORKSPACES
-
-# switch to workspace with urgent window automatically
-for_window [urgent=latest] focus
-
-# workspace back and forth
-workspace_auto_back_and_forth yes
-
-# workspace names
-set $ws1 1
-set $ws2 2
-set $ws3 3
-set $ws4 4
-set $ws5 5
-set $ws6 6
-set $ws7 7
-set $ws8 8
-set $ws9 9
-
-# switch to workspace
-bindsym $mod+1 workspace $ws1
-bindsym $mod+2 workspace $ws2
-bindsym $mod+3 workspace $ws3
-bindsym $mod+4 workspace $ws4
-bindsym $mod+5 workspace $ws5
-bindsym $mod+6 workspace $ws6
-bindsym $mod+7 workspace $ws7
-bindsym $mod+8 workspace $ws8
-
-# move focused window to workspace
-bindsym $mod+Ctrl+1 move container to workspace $ws1
-bindsym $mod+Ctrl+2 move container to workspace $ws2
-bindsym $mod+Ctrl+3 move container to workspace $ws3
-bindsym $mod+Ctrl+4 move container to workspace $ws4
-bindsym $mod+Ctrl+5 move container to workspace $ws5
-bindsym $mod+Ctrl+6 move container to workspace $ws6
-bindsym $mod+Ctrl+7 move container to workspace $ws7
-bindsym $mod+Ctrl+8 move container to workspace $ws8
-
-# move to workspace with focused window
-bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
-bindsym $mod+Shift+2 move container to workspace $ws2; workspace $ws2
-bindsym $mod+Shift+3 move container to workspace $ws3; workspace $ws3
-bindsym $mod+Shift+4 move container to workspace $ws4; workspace $ws4
-bindsym $mod+Shift+5 move container to workspace $ws5; workspace $ws5
-bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
-bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
-bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
-
-# assign programs to workspaces
-assign [app_id="firefox"] $ws1
-assign [app_id="telegram"] $ws2
-assign [app_id="thunar"] $ws4
-assign [app_id="ncspot"] $ws6
-
-# ETC.
-
-# restart sway
-bindsym $mod+Shift+r exec swaymsg reload
-
-# enabling touchpad
-
 # wallpaper
 output eDP-1 bg $HOME/Pictures/Wallpapers/flowies.png fill
-
-## STARTUP PROGRAMS
-
-# programs
-exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
-exec pipewire-pulse
-exec swaymsg $ws6; exec kitty -e ncspot
-exec syncthing -no-browser
-exec telegram-desktop
-exec MOZ_ENABLE_WAYLAND=1 firefox
-exec autotiling &
-exec easyeffects  --gapplication-service -l 'default'
-
-bar {
-    swaybar_command waybar
-  }
-
-# idk, gnome?
-set $gnome-schema org.gnome.desktop.interface
-
-exec_always {
-    gsettings set $gnome-schema gtk-theme 'adw-gtk3-onedark'
-}
-
-# scripts
-# huh?
 
 ## BORDERS
 
@@ -242,7 +39,6 @@ gaps outer -2
 
 # smart gaps
 smart_gaps off
-
 
 ## COLOURS
 

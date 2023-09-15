@@ -1,0 +1,43 @@
+## WINDOWRULE
+
+# rules for opening specific programs
+for_window [class="gwenview"] floating enable
+for_window [class="obsidian"] floating enable
+for_window [class="Thunar"] floating enable resize set 760 520, move position center
+for_window [title="alsamixer"] floating enable border pixel 1
+for_window [title="File Transfer*"] floating enable
+for_window [class="Lightdm-settings"] floating enable
+for_window [class="Lxappearance"] floating enable sticky enable border normal
+for_window [class="Nitrogen"] floating enable sticky enable border normal
+for_window [class="Pavucontrol"] floating enable
+for_window [class="qt5ct"] floating enable sticky enable border normal
+for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
+for_window [class="Xfburn"] floating enable
+
+
+# workspace names
+set $ws1 1
+set $ws2 2
+set $ws3 3
+set $ws4 4
+set $ws5 5
+set $ws6 6
+set $ws7 7
+set $ws8 8
+set $ws9 9
+
+# WORKSPACES
+
+# switch to workspace with urgent window automatically
+for_window [urgent=latest] focus
+
+# workspace back and forth
+workspace_auto_back_and_forth yes
+
+
+# assign programs to workspaces
+assign [app_id="telegram"] $ws2
+assign [app_id="thunar"] $ws4
+assign [app_id="ncspot"] $ws6
+
+# vim: set ft=swayconfig:
