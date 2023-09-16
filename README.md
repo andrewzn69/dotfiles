@@ -1,5 +1,5 @@
 <div align="center">
-<h1><i>/home/andrewzn/dotfiles</i></h1>
+<h1><i>~/.config</i></h1>
 <h4>Dotfiles, that I have <i>borrowed</i> from a couple of people and modified them to my liking.<h4>
 
 <img alt="Repo Size" src="https://custom-icon-badges.demolab.com/github/repo-size/andrewzn69/catppuccin-i3?style=for-the-badge&logo=file-zip&color=f5c2e7&logoColor=e0def4&labelColor=191724" />
@@ -8,13 +8,23 @@
 
 ---
 
+<h2><a href="https://github.com/andrewzn69/dotfiles/tree/crimson-hypr">Crimson (hypr) (latest)</a></h2>
+<p align=><img alt="screenshot" src="https://raw.githubusercontent.com/andrewzn69/dotfiles/assets/crimson-hypr/main.png"></p>
+
+---
+
+<h2><a href="https://github.com/andrewzn69/dotfiles/tree/lavender-hypr">Lavender (hypr) (latest)</a></h2>
+<p align=><img alt="screenshot" src="https://raw.githubusercontent.com/andrewzn69/dotfiles/assets/lavender-hypr/main.png"></p>
+
+---
+
 <h2><a href="https://github.com/andrewzn69/dotfiles/tree/catppuccin-i3">Catppuccin (i3)</a></h2>
 <p align=><img alt="screenshot" src="https://raw.githubusercontent.com/andrewzn69/dotfiles/assets/catppuccin-i3/main.png"></p>
 
 ---
 
-<h2><a href="https://github.com/andrewzn69/dotfiles/tree/onedarker-sway">OneDarker (sway)</a></h2>
-<p align=><img alt="screenshot" src="https://raw.githubusercontent.com/andrewzn69/dotfiles/assets/onedarker-sway/main.png"></p>
+<h2><a href="https://github.com/andrewzn69/dotfiles/tree/onedarker-hyprsway">OneDarker (hypr/sway)</a></h2>
+<p align=><img alt="screenshot" src="https://raw.githubusercontent.com/andrewzn69/dotfiles/assets/onedarker-hyprsway/main.png"></p>
 
 ---
 
