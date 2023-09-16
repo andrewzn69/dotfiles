@@ -13,8 +13,8 @@
 
 ---
 
-<h2><a href="https://github.com/andrewzn69/dotfiles/tree/lavender-hypr">Lavender (hypr) (latest)</a></h2>
-<p align=><img alt="screenshot" src="https://raw.githubusercontent.com/andrewzn69/dotfiles/assets/lavender-hypr/main.png"></p>
+<h2><a href="https://github.com/andrewzn69/dotfiles/tree/carbon-hypr">Carbon (hypr) (latest)</a></h2>
+<p align=><img alt="screenshot" src="https://raw.githubusercontent.com/andrewzn69/dotfiles/assets/carbon-hypr/main.png"></p>
 
 ---
 
