@@ -3,7 +3,7 @@ require('highlights')
 require('maps')
 require('plugins')
 
-vim.o.background = "dark"
-vim.cmd([[colorscheme onedark]])
+vim.cmd([[colorscheme oxocarbon]])
+vim.cmd([[set background=dark]])
 
 vim.o.clipboard = 'unnamedplus'

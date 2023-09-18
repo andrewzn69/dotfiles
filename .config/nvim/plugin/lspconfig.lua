@@ -83,7 +83,7 @@ nvim_lsp.tsserver.setup {
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-local servers = { 'clangd', 'cssls', 'html', 'omnisharp', 'typst_lsp' }
+local servers = { 'clangd', 'cssls', 'html', 'omnisharp', 'bashls' }
 for _, lsp in pairs(servers) do
   require('lspconfig')[lsp].setup {
     on_attach = function(client, bufnr)
@@ -95,6 +95,7 @@ for _, lsp in pairs(servers) do
     }
   }
 end
+
 
 nvim_lsp.typst_lsp.setup {
   on_attach = on_attach,
