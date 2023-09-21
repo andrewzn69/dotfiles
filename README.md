@@ -1,3 +1,6 @@
+> [!WARNING]
+> This branch is no longer maintained.
+
 <div align="center">
 <h1>Preview:</h1>
 <p align=><img alt="screenshot" src="https://raw.githubusercontent.com/andrewzn69/dotfiles/assets/catppuccin-i3/main.png"></p>
