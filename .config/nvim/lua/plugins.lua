@@ -1,61 +1,68 @@
-local status, packer = pcall(require, "packer")
-if (not status) then
-  print("Packer is not installed")
-  return
-end
-
-vim.cmd [[packadd packer.nvim]]
-
-packer.startup(function(use)
-  use 'wbthomason/packer.nvim'
-  use 'rafamadriz/friendly-snippets'
-  use 'ellisonleao/gruvbox.nvim'
-
-  use 'nvim-lualine/lualine.nvim' -- Statusline
-  use 'nvim-lua/plenary.nvim' -- Common utilities
-  use 'onsails/lspkind-nvim' -- vscode-like pictograms
-
-  use 'hrsh7th/cmp-path'
-  use 'hrsh7th/cmp-cmdline'
-  use 'hrsh7th/cmp-buffer' -- nvim-cmp ource for buffer words
-  use 'hrsh7th/cmp-vsnip'
-  use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp source for neovim's built-in LSP
-  use 'hrsh7th/nvim-cmp' -- Completion
-  use 'hrsh7th/vim-vsnip'
-  use 'neovim/nvim-lspconfig' -- LSP
-  use 'jose-elias-alvarez/null-ls.nvim' -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
-  use 'williamboman/mason.nvim'
-  use 'williamboman/mason-lspconfig.nvim'
-
-  use 'glepnir/lspsaga.nvim' -- LSP UIs
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
-  }
-  use 'kyazdani42/nvim-web-devicons' -- File icons
-  use 'nvim-telescope/telescope.nvim'
-  use 'nvim-telescope/telescope-file-browser.nvim'
-  use 'windwp/nvim-autopairs'
-  use 'windwp/nvim-ts-autotag'
-  use { 'numToStr/Comment.nvim',
-    requires = {
-      'JoosepAlviste/nvim-ts-context-commentstring'
-    }
-  }
-  use 'norcalli/nvim-colorizer.lua'
-  use 'folke/zen-mode.nvim'
-  use({
-    "iamcco/markdown-preview.nvim",
-    run = function() vim.fn["mkdp#util#install"]() end,
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
   })
-  use 'akinsho/nvim-bufferline.lua'
-  -- use 'github/copilot.vim'
-  use 'andweeb/presence.nvim' -- Rich Presence For Discord
+end
+vim.opt.rtp:prepend(lazypath)
 
-  use 'aurum77/live-server.nvim'
 
-  use 'lewis6991/gitsigns.nvim'
-  use 'dinhhuy258/git.nvim' -- For git blame & browse
+local plugins = {
+  'ellisonleao/gruvbox.nvim',                   -- color scheme
 
-  use 'Eandrju/cellular-automaton.nvim'
-end)
+  'rafamadriz/friendly-snippets',               -- collection of snippets
+  'hrsh7th/vim-vsnip',                          -- lsp snippets
+  'hrsh7th/cmp-vsnip',                          -- nvim-cmp source for vim-vsnip
+
+  'nvim-lua/plenary.nvim',                      -- common utilities
+  'onsails/lspkind-nvim',                       -- vscode-like pictograms
+
+  'hrsh7th/cmp-path',                           -- filesystem paths
+  'hrsh7th/cmp-cmdline',                        -- nvim-cmp source for vim's cmdline
+  'hrsh7th/cmp-buffer',                         -- nvim-cmp source for buffer words
+  'hrsh7th/cmp-nvim-lsp',                       -- nvim-cmp source for neovim's built-in lsp
+  'hrsh7th/nvim-cmp',                           -- completion
+  'neovim/nvim-lspconfig',                      -- lsp
+  'jose-elias-alvarez/null-ls.nvim',            -- use neovim as a language server to inject lsp diagnostics, code actions, and more via lua
+  'williamboman/mason.nvim',                    -- managing lsp servers
+  'williamboman/mason-lspconfig.nvim',          -- bridge between mason.nvim and lspconfig
+  'glepnir/lspsaga.nvim',                       -- lsp UIs
+  'nvim-treesitter/nvim-treesitter',            -- better code highlighting
+
+  'kaarmu/typst.vim',                           -- typst
+  'elkowar/yuck.vim',                           -- yuck
+
+  'nvim-telescope/telescope.nvim',              -- file browser
+  'nvim-telescope/telescope-file-browser.nvim', -- creating, renaming, deleting files
+
+  'windwp/nvim-autopairs',                      -- autopairs for brackets, etc.
+  'windwp/nvim-ts-autotag',                     -- autoclose and autorename html tags
+
+  'numToStr/Comment.nvim',                      -- smart comments
+  'norcalli/nvim-colorizer.lua',                -- colorizer for hex values
+  'folke/zen-mode.nvim',                        -- zen mode
+  'nvim-lualine/lualine.nvim',                  -- statusline
+  'akinsho/nvim-bufferline.lua',                -- bufferline
+  'lukas-reineke/indent-blankline.nvim',        -- indent lines
+  'kyazdani42/nvim-web-devicons',               -- file icons
+
+  {                                             -- markdown preview
+    'iamcco/markdown-preview.nvim',
+    ft = { "markdown" },
+    build = function() vim.fn["mkdp#util#install"]() end,
+  },
+
+  'aurum77/live-server.nvim', -- live server for html
+
+  'lewis6991/gitsigns.nvim',  -- git inline decorations
+  'dinhhuy258/git.nvim',      -- for git blame & browse
+}
+
+local opts = {}
+
+require("lazy").setup(plugins, opts)
