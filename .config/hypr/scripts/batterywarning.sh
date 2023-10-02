@@ -1,19 +1,24 @@
 #!/bin/bash
 
 while true; do
-    battery_level=$(acpi --battery | grep -oP '\d+%' | tr -d '%')
+    battery_status=$(acpi -b | awk '{print $3}')
 
-    if [[ -n $battery_level ]]; then
-        if (( battery_level <= 5 )); then
-            dunstify -u critical "$battery_level% Remaining" "Connect charger now"
-        elif (( battery_level == 10 )); then
-            dunstify -u normal "$battery_level% Remaining" "Consider charging soon"
-        else echo "" >&2
+    if [[ "$battery_status" == "Discharging," ]]; then
+        battery_level=$(acpi -b | grep -oP '\d+%' | tr -d '%')
+
+        if [[ -n $battery_level ]]; then
+            if (( battery_level <= 5 )); then
+                dunstify -u critical "$battery_level% Remaining" "Connect charger now"
+            elif (( battery_level == 10 )); then
+                dunstify -u normal "$battery_level% Remaining" "Consider charging soon"
+            fi
+        else
+            echo "Error getting battery level!" >&2
         fi
     else
-        echo "Error getting battery level!" >&2
+        echo "Battery is not discharging." >&2
     fi
 
-    # Sleep for a while before checking again (e.g., every 2 minutes)
-    sleep 120  # 120 seconds (2 minutes)
+    # 2 minutes before checking again
+    sleep 120
 done
