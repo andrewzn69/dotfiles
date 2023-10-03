@@ -11,7 +11,7 @@ alias up='yay -Syyu --noconfirm'
 alias clean='yay -Scc --noconfirm'
 
 # git alias for my dotfiles folder
-alias dotfiles='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+alias d='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
 # alias for nvim
 alias v='nvim'
@@ -28,3 +28,4 @@ alias mkdir='mkdir -p'
 alias la='ls -a'
 alias freeram="sudo sh -c 'sync; echo 3 > /proc/sys/vm/drop_caches'"
 alias bm='sh $HOME/.config/hypr/scripts/bookmarks'
+alias webcam='mpv av://v4l2:/dev/video0 --profile=low-latency --untimed'
