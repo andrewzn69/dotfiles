@@ -10,59 +10,57 @@ if not vim.loop.fs_stat(lazypath) then
   })
 end
 vim.opt.rtp:prepend(lazypath)
+-- ksdfjlsdjfl kdsjlk
 
 local plugins = {
-  'rafamadriz/friendly-snippets',
+  'nyoom-engineering/oxocarbon.nvim',           -- color scheme
 
-  'lukas-reineke/indent-blankline.nvim', -- indent lines
-  'nyoom-engineering/oxocarbon.nvim',
+  'rafamadriz/friendly-snippets',               -- collection of snippets
+  'hrsh7th/vim-vsnip',                          -- lsp snippets
+  'hrsh7th/cmp-vsnip',                          -- nvim-cmp source for vim-vsnip
 
-  'nvim-lualine/lualine.nvim', -- Statusline
-  'nvim-lua/plenary.nvim',     -- Common utilities
-  'onsails/lspkind-nvim',      -- vscode-like pictograms
+  'nvim-lua/plenary.nvim',                      -- common utilities
+  'onsails/lspkind-nvim',                       -- vscode-like pictograms
 
-  'hrsh7th/cmp-path',
-  'hrsh7th/cmp-cmdline',
-  'hrsh7th/cmp-buffer',              -- nvim-cmp ource for buffer words
-  'hrsh7th/cmp-vsnip',
-  'hrsh7th/cmp-nvim-lsp',            -- nvim-cmp source for neovim's built-in LSP
-  'hrsh7th/nvim-cmp',                -- Completion
-  'hrsh7th/vim-vsnip',
-  'neovim/nvim-lspconfig',           -- LSP
-  'jose-elias-alvarez/null-ls.nvim', -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
-  'williamboman/mason.nvim',
-  'williamboman/mason-lspconfig.nvim',
-  'nvim-treesitter/nvim-treesitter',
+  'hrsh7th/cmp-path',                           -- filesystem paths
+  'hrsh7th/cmp-cmdline',                        -- nvim-cmp source for vim's cmdline
+  'hrsh7th/cmp-buffer',                         -- nvim-cmp source for buffer words
+  'hrsh7th/cmp-nvim-lsp',                       -- nvim-cmp source for neovim's built-in lsp
+  'hrsh7th/nvim-cmp',                           -- completion
+  'neovim/nvim-lspconfig',                      -- lsp
+  'jose-elias-alvarez/null-ls.nvim',            -- use neovim as a language server to inject lsp diagnostics, code actions, and more via lua
+  'williamboman/mason.nvim',                    -- managing lsp servers
+  'williamboman/mason-lspconfig.nvim',          -- bridge between mason.nvim and lspconfig
+  'glepnir/lspsaga.nvim',                       -- lsp UIs
+  'nvim-treesitter/nvim-treesitter',            -- better code highlighting
 
-  'glepnir/lspsaga.nvim',         -- LSP UIs
-  'kyazdani42/nvim-web-devicons', -- File icons
-  'nvim-telescope/telescope.nvim',
-  'nvim-telescope/telescope-file-browser.nvim',
-  'windwp/nvim-autopairs',
-  'windwp/nvim-ts-autotag',
-  {
-    'numToStr/Comment.nvim',
-    opts = {},
-    lazy = false,
+  'kaarmu/typst.vim',                           -- typst
+  'elkowar/yuck.vim',                           -- yuck
+
+  'nvim-telescope/telescope.nvim',              -- file browser
+  'nvim-telescope/telescope-file-browser.nvim', -- creating, renaming, deleting files
+
+  'windwp/nvim-autopairs',                      -- autopairs for brackets, etc.
+  'windwp/nvim-ts-autotag',                     -- autoclose and autorename html tags
+
+  'numToStr/Comment.nvim',                      -- smart comments
+  'norcalli/nvim-colorizer.lua',                -- colorizer for hex values
+  'folke/zen-mode.nvim',                        -- zen mode
+  'nvim-lualine/lualine.nvim',                  -- statusline
+  'akinsho/nvim-bufferline.lua',                -- bufferline
+  'lukas-reineke/indent-blankline.nvim',        -- indent lines
+  'kyazdani42/nvim-web-devicons',               -- file icons
+
+  {                                             -- markdown preview
+    'iamcco/markdown-preview.nvim',
+    ft = { "markdown" },
+    build = function() vim.fn["mkdp#util#install"]() end,
   },
-  'norcalli/nvim-colorizer.lua',
-  'folke/zen-mode.nvim',
-  'iamcco/markdown-preview.nvim',
-  'akinsho/nvim-bufferline.lua',
-  -- use 'github/copilot.vim'
-  'sindrets/diffview.nvim', -- git diff tool
-  'andweeb/presence.nvim',  -- Rich Presence For Discord
 
-  'aurum77/live-server.nvim',
+  'aurum77/live-server.nvim', -- live server for html
 
-  'lewis6991/gitsigns.nvim',
-  'dinhhuy258/git.nvim', -- For git blame & browse
-
-  'Eandrju/cellular-automaton.nvim',
-
-  'kaarmu/typst.vim', -- typst
-
-  'elkowar/yuck.vim', -- yuck
+  'lewis6991/gitsigns.nvim',  -- git inline decorations
+  'dinhhuy258/git.nvim',      -- for git blame & browse
 }
 
 local opts = {}
