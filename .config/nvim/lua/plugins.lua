@@ -61,6 +61,7 @@ local plugins = {
 
   'lewis6991/gitsigns.nvim',  -- git inline decorations
   'dinhhuy258/git.nvim',      -- for git blame & browse
+  'sindrets/diffview.nvim',   -- diffview for nvim
 }
 
 local opts = {}
