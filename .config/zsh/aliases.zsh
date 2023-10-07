@@ -8,7 +8,7 @@ unset RPROMPT
 alias ins='yay -S'
 alias un='yay -Rns'
 alias up='yay -Syyu --noconfirm'
-alias clean='yay -Scc --noconfirm'
+alias clean='yay -Scc --noconfirm && yay -Rns $(yay -Qdtq) --noconfirm'
 
 # git alias for my dotfiles folder
 alias d='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
