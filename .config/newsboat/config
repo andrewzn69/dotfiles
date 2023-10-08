@@ -23,8 +23,8 @@ bind-key G end
 bind-key g home
 bind-key d pagedown
 bind-key u pageup
-bind-key l open
-bind-key h quit
+bind-key o open
+bind-key EK quit
 bind-key a toggle-article-read
 bind-key n next-unread
 bind-key N prev-unread
