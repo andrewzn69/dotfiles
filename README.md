@@ -2,6 +2,8 @@
 <h1><i>~/.config</i></h1>
 <h4>Dotfiles, that I have <i>borrowed</i> from a couple of people and modified them to my liking.<h4>
 
+<h5><a href="https://github.com/andrewzn69/wallpapers">My personal collection of wallpapers</a></h5>
+
 <img alt="Repo Size" src="https://custom-icon-badges.demolab.com/github/repo-size/andrewzn69/catppuccin-i3?style=for-the-badge&logo=file-zip&color=f5c2e7&logoColor=e0def4&labelColor=191724" />
 <img alt="Last Commit (branch)" src="https://custom-icon-badges.demolab.com/github/last-commit/andrewzn69/catppuccin-i3?style=for-the-badge&logo=history&color=96cdfb&logoColor=e0def4&labelColor=191724" />
 <img alt="License" src="https://custom-icon-badges.demolab.com/github/license/andrewzn69/catppuccin-i3?style=for-the-badge&logo=law&color=abe9b3&logoColor=e0def4&labelColor=181724" />
