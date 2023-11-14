@@ -1,15 +1,19 @@
 return {
 	"lukas-reineke/indent-blankline.nvim",
-	event = { "VeryLazy" },
+	event = "VeryLazy",
 	config = function()
 		require("ibl").setup({
-			indent = { 
-				tab_char = "▎",
-				char = " ",
-			},
 			scope = {
-				enabled = true,
+				show_start = false,
 			},
+			indent = {
+				char = "",
+				tab_char = "│",
+				smart_indent_cap = true,
+			},
+			whitespace = {
+				remove_blankline_trail = true,
+			}
 		})
 	end,
 }
