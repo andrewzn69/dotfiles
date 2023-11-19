@@ -1,9 +1,8 @@
-require('base')
-require('highlights')
+require("general")
 require('maps')
 require('plugins')
+require('ui')
 
-vim.o.background = "dark"
-vim.cmd([[colorscheme gruvbox]])
+vim.cmd([[set background=dark]])
 
 vim.o.clipboard = 'unnamedplus'

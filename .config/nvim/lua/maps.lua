@@ -33,4 +33,7 @@ keymap.set('n', '<C-w><right>', '<C-w>>')
 keymap.set('n', '<C-w><up>', '<C-w>+')
 keymap.set('n', '<C-w><down>', '<C-w>-')
 
+-- Grammar check
 keymap.set('n', '<F6>', ':setlocal spell! spelllang=en_us<CR>')
+
+vim.g.mapleader = " "
