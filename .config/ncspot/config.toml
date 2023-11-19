@@ -21,4 +21,6 @@ repeat = "playlist"
 
 # other
 "?" = "help"
+
 "U" = "update"
+"u" = "rescan"
