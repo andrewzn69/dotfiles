@@ -23,4 +23,4 @@ repeat = "playlist"
 "?" = "help"
 
 "U" = "update"
-"u" = "rescan"
+"u" = "reconnect"
