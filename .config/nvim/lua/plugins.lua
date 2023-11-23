@@ -42,6 +42,7 @@ lazy.setup({
 		require("plugins.mason"),
 		require("plugins.navic"),
 		require("plugins.oxocarbon"),
+		require("plugins.pandoc"),
 		require("plugins.scrollbar"),
 		require("plugins.telescope"),
 		require("plugins.treesitter"),
@@ -49,6 +50,7 @@ lazy.setup({
 		require("plugins.typst"),
 		require("plugins.web-devicons"),
 		require("plugins.which-key"),
+		require("plugins.yuck"),
 	},
 	dev = {
 		path = "~/.local/src",

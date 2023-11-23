@@ -1,0 +1,3 @@
+return {
+	'aspeddro/pandoc.nvim',
+}
