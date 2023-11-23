@@ -32,8 +32,16 @@ alias wscan='nmcli dev wifi rescan'
 alias mkdir='mkdir -p'
 alias la='ls -a'
 alias freeram="sudo sh -c 'sync; echo 3 > /proc/sys/vm/drop_caches'"
+
 alias bm='sh $HOME/.config/hypr/scripts/bookmarks'
-alias webcam='mpv av://v4l2:/dev/video0 --profile=low-latency --untimed'
 alias wttr='curl wttr.in'
 
+# programs
+alias qr='cobang'
+alias webcam='mpv av://v4l2:/dev/video0 --profile=low-latency --untimed'
 alias calc='speedcrunch'
+
+# kubernetes
+alias h='helm'
+alias k='kubectl'
+alias kn='kubectl config set-context --current --namespace ='
