@@ -11,4 +11,5 @@ env
 ohmyzsh
 options
 prompt
+secrets
 EOF
