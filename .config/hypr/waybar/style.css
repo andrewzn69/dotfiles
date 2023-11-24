@@ -41,16 +41,6 @@ window#waybar {
   font-weight: bolder;
 }
 
-#workspaces button label {
-  color: #ad685a;
-  font-weight: bolder;
-}
-
-#workspaces button.active label {
-  color: #1d2022;
-  font-weight: bolder;
-}
-
 #workspaces {
   background-color: transparent;
   margin-top: 10px;
@@ -64,7 +54,7 @@ window#waybar {
   background-color: #1d2022;
   border-radius: 15px;
   margin-right: 10px;
-  padding: 10px;
+  padding: 11px;
   padding-top: 4px;
   padding-bottom: 2px;
   font-weight: bolder;
@@ -73,14 +63,19 @@ window#waybar {
 }
 
 #workspaces button:hover {
-  background-color: #ad685a;
-  color: #1d2022;
+  box-shadow: inherit;
+  text-shadow: inherit;
+  background: #2a2b2d;
+  color: #ad685a;
+  border: 1px solid #2a2b2d;
 }
 
 #workspaces button.active {
   padding-right: 20px;
   border: 0px solid black;
   box-shadow: rgba(0, 0, 0, 0.288) 2 2 5 2px;
+  color: #1d2022;
+  font-weight: bolder;
   padding-left: 20px;
   padding-bottom: 1px;
   background: rgb(203, 166, 247);
@@ -143,6 +138,11 @@ window#waybar {
   100% {
     background-position: 200% 200%;
   }
+}
+
+#workspaces button.active:hover {
+  background-color: red;
+  color: #1d2022;
 }
 
 #custom-playerlabel.low {
@@ -354,6 +354,10 @@ window#waybar {
 #disk {
   color: #ad685a;
   font-weight: bolder;
+}
+
+#disk:hover {
+  background-color: red;
 }
 
 #backlight {
