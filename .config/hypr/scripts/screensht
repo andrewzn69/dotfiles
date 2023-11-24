@@ -14,10 +14,6 @@ _BG_SIZE_=10
 _BORDER_SIZE_=0
 _SHADOW_SIZE_='100x40+0+16'  # [ weight ] x [ radius ] + [ horizontal ] x [ vertical ]
 _ROUNDED_CORNER_=8
-# author Config
-_AUTHOR_POST_=( 'South' '+0+15' )
-_AUTHOR_NAME_=" $USER"
-_AUTHOR_COLOR_='#EBDBB2'
 # get lists font with "convert -list font | grep -iE 'font:.*' | nl"
 _FONT_SIZE_=12
 _FONT_='JetBrainsMonoNL-NFM-Bold'
@@ -25,7 +21,7 @@ _FONT_='JetBrainsMonoNL-NFM-Bold'
 function check() {
     if [[ $? -eq 1 && ${PIPESTATUS[0]} -eq 1 ]]; then
         _end_job_=$(date +%s)
-        summary $_start_job_ $_end_job_ 'failed' && dunstify -u critical -t 3000 -a "Screenshot Tool" "Screensht" >> $_LOG_FILE_ 2>&1
+        summary $_start_job_ $_end_job_ 'failed' && dunstify -u normal -t 3000 -a "Screenshot Tool" "Screenshot saved" >> $_LOG_FILE_ 2>&1
         exit 1
     fi
 }
@@ -84,10 +80,6 @@ function convert() {
 
     magick convert "$_target_file_" \( +clone -background black -shadow $_SHADOW_SIZE_ \) +swap -background none -layers merge +repage "$_target_file_" >> $_LOG_FILE_ 2>&1 \
     && magick convert "$_target_file_" -bordercolor $_BG_COLOR_ -border $_BG_SIZE_ "$_target_file_" >> $_LOG_FILE_ 2>&1
-    check
-
-    echo -en "  $_AUTHOR_NAME_  " | magick convert "$_target_file_" -gravity ${_AUTHOR_POST_[0]} -pointsize $_FONT_SIZE_ -fill $_AUTHOR_COLOR_ -undercolor none -font $_FONT_ -annotate ${_AUTHOR_POST_[1]} @- "$_target_file_" \
-    >> $_LOG_FILE_ 2>&1 && magick convert "$_target_file_" -gravity South -chop 0x$(( $_BG_SIZE_ / 2 )) "$_target_file_" >> $_LOG_FILE_ 2>&1
     check
 
     magick convert "$_target_file_" -gravity North -background $_BG_COLOR_ -splice 0x$(( $_BG_SIZE_ / 2 )) "$_target_file_" >> $_LOG_FILE_ 2>&1
