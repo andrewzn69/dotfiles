@@ -4,7 +4,7 @@
 
     // waybar position (top|bottom|left|right)
     "position": "top", 
-    "height": "auto", 
+    "height": "52", 
 
     // gaps between modules (4px)
     "spacing": 5, 
@@ -13,9 +13,9 @@
     // "margin-left":25,
     // "margin-right":25,
     "margin-bottom":-11,
-    //"margin-top":5,
-    "modules-left": ["wlr/workspaces"],
-    "modules-right": ["memory","disk","custom/ss","custom/cycle_wall","custom/expand","clock"],
+    //"margin-top":6,
+    "modules-left": ["hyprland/workspaces"],
+    "modules-right": ["custom/get_weather","memory","disk","custom/ss","custom/cycle_wall","custom/expand","clock"],
     "modules-center": ["custom/playerlabel"],
     // Modules configuration
 
@@ -52,10 +52,23 @@
         "format":"{}",
         "exec":"~/.config/hypr/scripts/tools/expand arrow-icon"
     },
-    "wlr/workspaces": {
+    "hyprland/workspaces": {
         "format": "{icon}",
+        "format-icons": {
+          "1": "1",
+          "2": "2",
+          "3": "3",
+          "4": "4",
+          "5": "5",
+          "6": "6",
+          "7": "7",
+          "8": "8",
+          "9": "9",
+          "10": "10",
+        },
         "format-active": " {icon} ",
-        "on-click": "activate"
+        "on-click": "activate",
+        "sort-by-number": true
     },
     "mpd": {
         "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
@@ -106,7 +119,9 @@
         "interval": 2,
     },
     "disk": {
-        "format": "{free}"
+        "format": "{free}",
+        "on-click": "baobab",
+        "path": "/",
     },
     "temperature": {
         // "thermal-zone": 2,
@@ -143,5 +158,12 @@
         "escape": true,
         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    },
+    "custom/weather": {
+    "exec": "$HOME/.config/hypr/scripts/waybar/get_weather.sh Berlin+Germany",
+    "return-type": "json",
+    "format": "{}",
+    "tooltip": true,
+    "interval": 3600
     }
 }
