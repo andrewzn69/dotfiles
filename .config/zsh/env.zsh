@@ -12,6 +12,7 @@ export TERMINAL="kitty"
 export BROWSER="firefox"
 export VISUAL="nvim"
 export EDITOR="nvim"
+export MANPAGER="nvim +Man!"
 
 # pfetch
 export PF_INFO="ascii title os uptime pkgs"
@@ -38,3 +39,5 @@ export LS_COLORS="$LS_COLORS:ow=1;34:tw=1;34:"
 
 # gtfo
 export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
+
+export PATH="/usr/bin:$PATH"
