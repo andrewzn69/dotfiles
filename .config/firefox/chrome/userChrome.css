@@ -75,22 +75,22 @@
 
   /* Theme Colour Suggestions
      *                              Dark        Light   */
-  --window-colour: #282c34; /* #7a818e; */
-  --second-window-colour: #7a818e;
-  --secondary-colour: #30363f; /* #a0a8b7; */
-  --inverted-colour: #cdd6f4; /* #1E2021; */
+  --window-colour: #161616; /* #7a818e; */
+  --second-window-colour: #d0d0d0;
+  --secondary-colour: #262626; /* #161616; */
+  --inverted-colour: #e0def4; /* #1E2021; */
   --blue: #89dceb;
 
   /* Containter Tab Colours */
-  --uc-identity-color-blue: #4fa6ed;
-  --uc-identity-color-teal: #94e2d5;
-  --uc-identity-color-green: #8ebd6b;
-  --uc-identity-color-yellow: #e2b86b;
-  --uc-identity-color-orange: #e2b86b;
-  --uc-identity-color-red: #e55561;
+  --uc-identity-color-blue: #33b1ff;
+  --uc-identity-color-teal: #3ddbd9;
+  --uc-identity-color-green: #42be65;
+  --uc-identity-color-yellow: #ffe97b;
+  --uc-identity-color-orange: #ffe97b;
+  --uc-identity-color-red: #ee5396;
   --uc-identity-color-red-dark: #5b2226;
-  --uc-identity-color-pink: #f5c2e7;
-  --uc-identity-color-purple: #bf68d9;
+  --uc-identity-color-pink: #ff7eb6;
+  --uc-identity-color-purple: #be95ff;
 
   /* URL colour in URL bar suggestions */
   --urlbar-popup-url-color: var(--secondary-colour) !important;
