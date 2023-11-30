@@ -5,6 +5,12 @@ return {
 		require("ibl").setup({
 			scope = {
 				show_start = false,
+				exclude = {
+					language = {
+						"yaml",
+						"toml",
+					},
+				},
 			},
 			indent = {
 				char = "",
