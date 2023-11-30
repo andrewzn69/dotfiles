@@ -40,8 +40,9 @@ alias wttr='curl wttr.in'
 alias qr='cobang'
 alias webcam='mpv av://v4l2:/dev/video0 --profile=low-latency --untimed'
 alias calc='speedcrunch'
+alias cal='calcurse'
 
 # kubernetes
 alias h='helm'
 alias k='kubectl'
-alias kn='kubectl config set-context --current --namespace ='
+alias kn='kubectl config set-context --current --namespace'
