@@ -10,6 +10,7 @@ return {
 		"hrsh7th/cmp-nvim-lua",
 		"windwp/nvim-autopairs",
 		"onsails/lspkind-nvim",
+		"zbirenbaum/copilot-cmp",
 		{ "roobert/tailwindcss-colorizer-cmp.nvim", config = true }
 	},
 	config = function()
@@ -70,6 +71,9 @@ return {
 				["<C-p>"] = cmp_prev,
 				["<up>"] = cmp_prev,
 			},
+			experimental = {
+				ghost_text = true,
+			},
 			sources = {
 				{ name = "nvim_lsp_signature_help", group_index = 1 },
 				{ name = "luasnip",                 max_item_count = 5,  group_index = 1 },
@@ -78,6 +82,7 @@ return {
 				{ name = "vim-dadbod-completion",   group_index = 1 },
 				{ name = "path",                    group_index = 2 },
 				{ name = "buffer",                  keyword_length = 2,  max_item_count = 5, group_index = 2 },
+				{ name = "copilot",                 group_index = 2 },
 			},
 		})
 		local presentAutopairs, cmp_autopairs = pcall(require, "nvim-autopairs.completion.cmp")
