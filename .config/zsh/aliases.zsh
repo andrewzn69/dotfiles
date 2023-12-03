@@ -34,6 +34,7 @@ alias la='ls -a'
 alias freeram="sudo sh -c 'sync; echo 3 > /proc/sys/vm/drop_caches'"
 
 alias bm='sh $HOME/.config/hypr/scripts/bookmarks'
+alias templates='sh $HOME/Development/bash-scripts/templates/templates.sh'
 alias wttr='curl wttr.in'
 
 # programs
