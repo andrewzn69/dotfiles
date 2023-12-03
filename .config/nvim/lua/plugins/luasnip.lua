@@ -10,7 +10,9 @@ return {
 			enable_autosnippets = true,
 		})
 		-- add vscode exported completions
-    require("luasnip.loaders.from_vscode").lazy_load()
+		require("luasnip.loaders.from_vscode").lazy_load()
+		require("luasnip.loaders.from_vscode").lazy_load({ paths = vim.fn.stdpath("config") .. "/snippets/" })
+
 		local r = require("utils.remaps")
 
 		r.map({ "i", "s" }, "<c-n>", function()
@@ -30,6 +32,5 @@ return {
 				luasnip.change_choice(1)
 			end
 		end, "Show list of options")
-
 	end,
 }

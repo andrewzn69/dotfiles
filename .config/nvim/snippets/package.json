@@ -1,0 +1,103 @@
+{
+	"name": "nvim-snippets",
+	"author": "andrewzn69",
+	"engines": {
+		"vscode": "^1.11.0"
+	},
+	"contributes": {
+		"snippets": [
+			{
+				"language": "javascript",
+				"path": "./javascript.json"
+			},
+			{
+				"language": "typescript",
+				"path": "./typescript.json"
+			},
+			{
+				"language": "typescriptreact",
+				"path": "./typescriptreact.json"
+			},
+			{
+				"language": "javascriptreact",
+				"path": "./javascriptreact.json"
+			},
+			{
+				"language": "html",
+				"path": "./html.json"
+			},
+			{
+				"language": "css",
+				"path": "./css.json"
+			},
+			{
+				"language": "scss",
+				"path": "./scss.json"
+			},
+			{
+				"language": "less",
+				"path": "./less.json"
+			},
+			{
+				"language": "json",
+				"path": "./json.json"
+			},
+			{
+				"language": "markdown",
+				"path": "./markdown.json"
+			},
+			{
+				"language": "vue",
+				"path": "./vue.json"
+			},
+			{
+				"language": "python",
+				"path": "./python.json"
+			},
+			{
+				"language": "go",
+				"path": "./go.json"
+			},
+			{
+				"language": "java",
+				"path": "./java.json"
+			},
+			{
+				"language": "c",
+				"path": "./c.json"
+			},
+			{
+				"language": "cpp",
+				"path": "./cpp.json"
+			},
+			{
+				"language": "csharp",
+				"path": "./csharp.json"
+			},
+			{
+				"language": "ruby",
+				"path": "./ruby.json"
+			},
+			{
+				"language": "php",
+				"path": "./php.json"
+			},
+			{
+				"language": "rust",
+				"path": "./rust.json"
+			},
+			{
+				"language": "swift",
+				"path": "./swift.json"
+			},
+			{
+				"language": "typst",
+				"path": "./typst.json"
+			},
+			{
+				"language": "sh",
+				"path": "./sh.json"
+			}
+		]
+	}
+}

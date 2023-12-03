@@ -1,0 +1,12 @@
+{
+	"general": {
+		"prefix": "general",
+		"body": [
+			"#import \"$HOME/docs/typst_templates/general.typ\": template, lref",
+			"#show: template.with(",
+			"\t title: \"${1:title}\", ",
+			")"
+		],
+		"description": "General header for typst"
+	}
+}
