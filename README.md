@@ -3,7 +3,7 @@
 
 <div align="center">
 <h1>Preview:</h1>
-<p align=><img alt="screenshot" src="https://raw.githubusercontent.com/andrewzn69/dotfiles/assets/onedarker-sway/main.png"></p>
+<p align=><img alt="screenshot" src="https://raw.githubusercontent.com/andrewzn69/dotfiles/assets/onedarker-hyprsway/main.png"></p>
 <p align=><a href="https://upload.wikimedia.org/wikipedia/commons/4/4f/Pexels-elijah-o%27donnell-4173624.jpg">Wallpaper</a> (customized)</p>
 
 ## 🌟 Starring 🌟
