@@ -1,7 +1,7 @@
 <div align="center">
 <h1>Preview:</h1>
 <p align=><img alt="screenshot" src="https://raw.githubusercontent.com/andrewzn69/dotfiles/assets/carbon-hypr/main.png"></p>
-<p align=><a href="https://upload.wikimedia.org/wikipedia/commons/4/4f/Pexels-elijah-o%27donnell-4173624.jpg">My Wallpaper collection</a></p>
+<p align=><a href="https://github.com/andrewzn69/wallpapers">My Wallpaper collection</a></p>
 
 ## 🌟 Starring 🌟
 
