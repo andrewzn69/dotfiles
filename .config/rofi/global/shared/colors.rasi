@@ -1,0 +1,11 @@
+// COLORS
+
+* {
+    background:							#161616FF;
+		background-transparent: #26262695;
+    background-alt:	  		  #262626FF;
+		selected:								#EE5396FF;
+    foreground:							#D0D0D0FF;
+    active:									#42BE65FF;
+    urgent:									#EE5396FF;
+}

@@ -1,0 +1,5 @@
+// FONTS
+
+* {
+		font: "Ubuntu Nerd Font 12";
+}
