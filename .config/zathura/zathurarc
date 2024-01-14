@@ -1,0 +1,50 @@
+set selection-clipboard clipboard
+
+# open document in fit-width mode by default
+set adjust-open "best-fit"
+
+# one page per row by default
+set pages-per-row 1
+
+# stop at page boundaries
+set scroll-page-aware "true"
+
+set smooth-scroll "true"
+set scroll-full-overlap 0.01
+set scroll-step 100
+
+# zoom settings
+set zoom-min 10
+set guioptions ""
+
+# oxocarbon color scheme
+
+set font "JetBrains Mono Nerd Font 10"
+set default-bg "#000000" #00
+set default-fg "#000000" #01
+
+set statusbar-bg "#161616" #04
+set statusbar-fg "#d0d0d0" #01
+
+
+set inputbar-bg "#161616" #04
+set inputbar-fg "#d0d0d0" #01
+
+set notification-error-bg "#ee5396" #08
+set notification-error-fg "#d0d0d0" #00
+
+set notification-bg "#161616" #04
+set notification-fg "#d0d0d0" #01
+
+set highlight-color "#ee5396" #0A
+set highlight-active-color "#ffe97b" #0D
+
+set recolor "true"
+set recolor-keephue "true"
+set recolor-darkcolor "#d0d0d0" #00
+set recolor-lightcolor "#161616" #00
+
+set page-border-color red
+
+set render-loading "false"
+set scroll-step 50
