@@ -48,10 +48,10 @@ run_cmd() {
 		elif [[ $1 == '--reboot' ]]; then
 			systemctl reboot
 		elif [[ $1 == '--hibernate' ]]; then
-			bash "$HOME"/Development/bash-scripts/openrgb2.sh
+			bash "$HOME"/Development/bash-scripts/openrgb/openrgb2.sh
 			systemctl hibernate
 		elif [[ $1 == '--suspend' ]]; then
-			bash "$HOME"/Development/bash-scripts/openrgb2.sh
+			bash "$HOME"/Development/bash-scripts/openrgb/openrgb2.sh
 			mpc -q pause
 			amixer set Master mute
 			systemctl suspend
@@ -93,8 +93,10 @@ case ${chosen} in
 	fi
 	;;
 "$suspend")
-	bash "$HOME"/Development/bash-scripts/openrgb2.sh
+	bash "$HOME"/Development/bash-scripts/openrgb/openrgb2.sh
 	i3exit suspend
+	swaylock -c 000000
+	bash "$HOME"/Development/bash-scripts/openrgb/openrgb.sh
 	;;
 "$logout")
 	run_cmd --logout
