@@ -26,12 +26,12 @@ end
 lazy.setup({
 	spec = {
 		require("plugins.alpha"),
-		require("plugins.animate"),
 		require("plugins.autopairs"),
 		require("plugins.blankline"),
 		require("plugins.cmp"),
 		require("plugins.colorizer"),
 		require("plugins.comment"),
+		require("plugins.copilot"),
 		require("plugins.dadbod"),
 		require("plugins.diffview"),
 		require("plugins.git"),
@@ -47,6 +47,7 @@ lazy.setup({
 		require("plugins.noice"),
 		require("plugins.notify"),
 		require("plugins.scrollbar"),
+		require("plugins.surround"),
 		require("plugins.telescope"),
 		require("plugins.treesitter"),
 		require("plugins.ts-autotag"),
