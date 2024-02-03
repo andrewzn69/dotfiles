@@ -38,6 +38,7 @@ return {
 				"typescript",
 				"vim",
 				"yaml",
+				"yuck",
 			},
 			highlight = {
 				enable = true,
@@ -116,6 +117,7 @@ return {
 					["i;"] = "textsubjects-container-inner",
 				},
 			},
+
 		})
 
 		local r = require("utils.remaps")
@@ -168,4 +170,3 @@ return {
 		vim.cmd [[TSUpdate]]
 	end,
 }
-
