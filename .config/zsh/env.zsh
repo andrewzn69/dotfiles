@@ -3,6 +3,7 @@
 # zsh
 export ZSH="$HOME/.oh-my-zsh"
 export PATH=/home/zimn/.cargo/bin:$PATH
+export PATH="$PATH:/home/zimn/.local/bin"
 
 # prompts
 export SUDO_PROMPT="password: "
