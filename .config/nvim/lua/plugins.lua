@@ -36,6 +36,8 @@ lazy.setup({
 		require("plugins.diffview"),
 		require("plugins.git"),
 		require("plugins.gitsigns"),
+		require("plugins.indentscope"),
+		require("plugins.live-server"),
 		require("plugins.lsp"),
 		require("plugins.lualine"),
 		require("plugins.luasnip"),
