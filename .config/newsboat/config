@@ -33,7 +33,8 @@ bind-key U show-urls
 bind-key x pb-delete
 bind-key ENTER open-in-browser
 
-browser "(firefox %u >/dev/null 2>&1) &"
+browser "lynx %u"
+#browser "(firefox %u >/dev/null 2>&1) &"
 macro o set browser "mpv %u &> /dev/null &" ; open-in-browser ; set browser "elinks %u"
 
 # colors
@@ -44,3 +45,5 @@ color info yellow black
 color hint-key yellow black
 
 feedlist-format "%?T?║%n %12u %t &╠ %t?"
+
+macro i set pager "~/Development/bash-scripts/kitty-img-pager/kitty-img-pager.sh"; open; set pager internal
