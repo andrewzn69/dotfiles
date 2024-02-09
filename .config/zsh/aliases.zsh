@@ -32,9 +32,6 @@ alias wscan='nmcli dev wifi rescan'
 alias mkdir='mkdir -p'
 alias la='ls -a'
 alias freeram="sudo sh -c 'sync; echo 3 > /proc/sys/vm/drop_caches'"
-
-alias bm='sh $HOME/.config/hypr/scripts/bookmarks'
-alias templates='sh $HOME/Development/bash-scripts/templates/templates.sh'
 alias wttr='curl wttr.in'
 
 # programs
@@ -42,6 +39,13 @@ alias qr='cobang'
 alias webcam='mpv av://v4l2:/dev/video0 --profile=low-latency --untimed'
 alias calc='speedcrunch'
 alias cal='calcurse'
+
+# scripts
+alias scrape='bash $HOME/Development/bash-scripts/scrape/scrape.sh'
+alias bm='sh $HOME/.config/hypr/scripts/bookmarks'
+alias templates='sh $HOME/Development/bash-scripts/templates/templates.sh'
+alias gid='bash $HOME/Development/bash-scripts/gid/gid.sh'
+alias manual='glow $HOME/docs/Manual/'
 
 # kubernetes
 alias h='helm'
