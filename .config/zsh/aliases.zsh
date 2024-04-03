@@ -46,6 +46,8 @@ alias bm='sh $HOME/.config/hypr/scripts/bookmarks'
 alias templates='sh $HOME/Development/bash-scripts/templates/templates.sh'
 alias gid='bash $HOME/Development/bash-scripts/gid/gid.sh'
 alias manual='glow $HOME/docs/Manual/'
+alias idos='python3 $HOME/Development/Python/idos-cli/code/main.py'
+alias compare='bash $HOME/Development/bash-scripts/compare/compare.sh'
 
 # kubernetes
 alias h='helm'
