@@ -36,6 +36,8 @@ lazy.setup({
 		require("plugins.diffview"),
 		require("plugins.git"),
 		require("plugins.gitsigns"),
+		require("plugins.indentscope"),
+		require("plugins.live-server"),
 		require("plugins.gruvbox"),
 		require("plugins.lsp"),
 		require("plugins.lualine"),
@@ -52,7 +54,7 @@ lazy.setup({
 		require("plugins.treesitter"),
 		require("plugins.ts-autotag"),
 		require("plugins.typst"),
-		require("plugins.web-devicons"),
+		-- require("plugins.web-devicons"),
 		require("plugins.which-key"),
 	},
 	dev = {

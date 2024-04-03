@@ -29,7 +29,9 @@ return {
 				bright_green = "#98971A",
 				bright_yellow = "#D79921",
 			},
-			overrides = {},
+			overrides = {
+				MiniIndentscopeSymbol = { fg = "#A89984" }, -- for mini.indentscope
+			},
 			dim_inactive = false,
 			transparent_mode = false,
 		})
