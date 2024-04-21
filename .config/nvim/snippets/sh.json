@@ -1,0 +1,9 @@
+{
+	"general": {
+		"prefix": "!",
+		"body": [
+			"#!/bin/bash\n\n\n"
+		],
+		"description": "init"
+	}
+}
