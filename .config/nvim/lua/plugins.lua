@@ -26,6 +26,7 @@ end
 lazy.setup({
 	spec = {
 		require("plugins.alpha"),
+		require("plugins.vim-astro"),
 		require("plugins.autopairs"),
 		require("plugins.blankline"),
 		require("plugins.cmp"),
