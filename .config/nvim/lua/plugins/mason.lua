@@ -35,6 +35,7 @@ return {
 				"tflint",
 				"typescript-language-server",
 				"yaml-language-server",
+				"marksman",
 			}
 			vim.cmd('MasonInstall ' .. table.concat(ensure_installed, ' '))
 		end, { desc = "install all lsp tools" })
