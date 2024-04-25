@@ -32,6 +32,7 @@ local cmds = {
 	sh = ext_fmt("shfmt -w -i 0 -sr -kp"),
 	typescript = ext_fmt("prettier -w"),
 	yaml = ext_fmt("prettier -w"),
+	markdown = ext_fmt("markdownlint --fix"),
 }
 
 local X = {}
