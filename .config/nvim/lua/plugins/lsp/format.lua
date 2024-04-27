@@ -6,7 +6,6 @@ local ext_fmt = function(cmd)
 		vim.cmd([[:silent syntax sync fromstart]])
 		vim.fn.winrestview(view)
 		vim.cmd([[:silent redraw!]])
-		vim.cmd([[:silent e]])
 	end
 end
 
