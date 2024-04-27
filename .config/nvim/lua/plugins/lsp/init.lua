@@ -91,6 +91,7 @@ return {
 			tflint = {},
 			tsserver = require("plugins.lsp.servers.tsserver")(on_attach),
 			yamlls = {},
+			tailwindcss = {},
 			-- need to fix ig
 			--typst = require("plugins.lsp.servers.typst")(on_attach),
 		}
