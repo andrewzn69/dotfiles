@@ -52,7 +52,6 @@ lazy.setup({
 		require("plugins.treesitter"),
 		require("plugins.ts-autotag"),
 		require("plugins.typst"),
-		require("plugins.vim-astro"),
 		require("plugins.web-devicons"),
 		require("plugins.which-key"),
 		require("plugins.yuck"),
