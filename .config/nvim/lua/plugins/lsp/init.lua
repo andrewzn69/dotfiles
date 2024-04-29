@@ -82,6 +82,7 @@ return {
 			html = {},
 			jsonls = {},
 			lua_ls = require("plugins.lsp.servers.luals")(on_attach),
+			marksman = require("plugins.lsp.servers.marksman")(on_attach),
 			omnisharp = require("plugins.lsp.servers.omnisharp")(on_attach),
 			intelephense = require("plugins.lsp.servers.phpls")(on_attach),
 			pylsp = {},
