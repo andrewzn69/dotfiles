@@ -6,7 +6,6 @@ local ext_fmt = function(cmd)
 		vim.cmd([[:silent syntax sync fromstart]])
 		vim.fn.winrestview(view)
 		vim.cmd([[:silent redraw!]])
-		vim.cmd([[:silent e]])
 	end
 end
 
@@ -32,6 +31,7 @@ local cmds = {
 	sh = ext_fmt("shfmt -w -i 0 -sr -kp"),
 	typescript = ext_fmt("prettier -w"),
 	yaml = ext_fmt("prettier -w"),
+	markdown = ext_fmt("markdownlint --fix"),
 }
 
 local X = {}
