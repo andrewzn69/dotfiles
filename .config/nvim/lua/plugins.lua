@@ -36,6 +36,7 @@ lazy.setup({
 		require("plugins.dadbod"),
 		require("plugins.diffview"),
 		require("plugins.git"),
+		require("plugins.git-blame"),
 		require("plugins.gitsigns"),
 		require("plugins.indentscope"),
 		require("plugins.live-server"),
