@@ -14,6 +14,7 @@ local int_fmt = function()
 end
 
 local cmds = {
+	astro = ext_fmt("prettier -w"),
 	c = ext_fmt("clang-format --style=file -i"),
 	cmake = ext_fmt("cmake-format -i"),
 	cpp = ext_fmt("clang-format --style=file -i"),
@@ -30,6 +31,7 @@ local cmds = {
 	rust = int_fmt,
 	sh = ext_fmt("shfmt -w -i 0 -sr -kp"),
 	typescript = ext_fmt("prettier -w"),
+	typescriptreact = ext_fmt("prettier -w"),
 	yaml = ext_fmt("prettier -w"),
 	markdown = ext_fmt("markdownlint --fix"),
 }

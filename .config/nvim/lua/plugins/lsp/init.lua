@@ -76,6 +76,7 @@ return {
 		end
 
 		local servers = {
+			astro = {},
 			bashls = require("plugins.lsp.servers.bashls")(on_attach),
 			cssls = require("plugins.lsp.servers.cssls")(on_attach),
 			dockerls = {},
@@ -89,6 +90,7 @@ return {
 			rust_analyzer = {},
 			terraformls = {},
 			tflint = {},
+			tailwindcss = {},
 			tsserver = require("plugins.lsp.servers.tsserver")(on_attach),
 			yamlls = {},
 			-- need to fix ig
