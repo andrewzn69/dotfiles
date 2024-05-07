@@ -44,7 +44,7 @@
 			},
 			{
 				"language": "markdown",
-				"path": "./markdown.json"
+				"path": "./md.json"
 			},
 			{
 				"language": "vue",

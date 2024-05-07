@@ -1,0 +1,18 @@
+{
+	"general": {
+		"prefix": "manualpost",
+		"body": [
+			"---",
+			"description: ${1: }",
+			"layout: ../../layouts/BlogPost.astro",
+			"title: How to ${2: }",
+			"createdAt: ${3:date}",
+			"updatedAt: ${4:date}",
+			"tags:",
+			"- ${5: }",
+			"heroImage: /posts/${6: }",
+			"slug: ${7: }"
+		],
+		"description": "init"
+	}
+}
