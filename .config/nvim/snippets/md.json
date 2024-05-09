@@ -1,6 +1,6 @@
 {
 	"general": {
-		"prefix": "manualpost",
+		"prefix": "howtopost",
 		"body": [
 			"---",
 			"description: ${1: }",
@@ -11,7 +11,8 @@
 			"tags:",
 			"- ${5: }",
 			"heroImage: /posts/${6: }",
-			"slug: ${7: }"
+			"slug: ${7: }",
+			"---"
 		],
 		"description": "init"
 	}
