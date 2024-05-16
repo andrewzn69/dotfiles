@@ -10,6 +10,7 @@ vim.opt.showcmd = true
 vim.opt.laststatus = 2
 vim.opt.scrolloff = 10
 
+vim.opt.cursorcolumn = true
 
 -- security
 vim.opt.modelines = 0
