@@ -11,6 +11,7 @@ vim.opt.laststatus = 2
 vim.opt.scrolloff = 10
 
 vim.opt.cursorcolumn = true
+vim.opt.colorcolumn = "81"
 
 -- security
 vim.opt.modelines = 0
