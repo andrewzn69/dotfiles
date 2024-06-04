@@ -10,6 +10,7 @@ vim.opt.showcmd = true
 vim.opt.laststatus = 2
 vim.opt.scrolloff = 10
 
+vim.opt.cursorline = true
 vim.opt.cursorcolumn = true
 vim.opt.colorcolumn = "81"
 
@@ -53,6 +54,10 @@ vim.opt.wildignore:append(".swp,.lock,.DS_Store,._*")
 vim.opt.wildignore:append(".,..")
 vim.opt.wildignore:append(" */node_modules/* ")
 
+-- use markdown syntax highlighting for mdx
+-- no mdx treeshitter support yet?
+vim.cmd([[au BufRead,BufNewFile *.mdx set filetype=markdown]])
+
 -- case insensitive search
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
@@ -94,3 +99,4 @@ vim.opt.formatoptions:append { 'r' }
 -- undercurl
 vim.cmd([[let &t_Cs = "\e[4:3m"]])
 vim.cmd([[let &t_Ce = "\e[4:0m"]])
+
