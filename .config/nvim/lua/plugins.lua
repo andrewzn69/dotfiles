@@ -46,6 +46,7 @@ lazy.setup({
 		require("plugins.markdown"),
 		require("plugins.mason"),
 		require("plugins.navic"),
+		require("plugins.nvim-cursorline"),
 		require("plugins.oxocarbon"),
 		require("plugins.pandoc"),
 		require("plugins.scrollbar"),

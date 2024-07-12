@@ -7,7 +7,6 @@ return {
 	config = function()
 		local navic = require("nvim-navic")
 		local icons = require("utils.icons")
-		local lualine = require("lualine")
 
 		navic.setup {
 			icons = {

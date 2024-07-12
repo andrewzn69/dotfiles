@@ -22,7 +22,7 @@ local cmds = {
 	go = int_fmt,
 	html = ext_fmt("prettier -w"),
 	java = ext_fmt("astyle -A2 -s2 -c -J -n -q -z2 -xC80"),
-	javascript = ext_fmt("prettier -w"),
+	javascript = ext_fmt("eslint_d"),
 	json = ext_fmt("prettierd -w"),
 	lua = ext_fmt("stylua"),
 	nix = ext_fmt("nixpkgs-fmt"),
@@ -32,7 +32,7 @@ local cmds = {
 	sh = ext_fmt("shfmt -w -i 0 -sr -kp"),
 	typescript = ext_fmt("prettier -w"),
 	typescriptreact = ext_fmt("prettier -w"),
-	yaml = ext_fmt("prettier -w"),
+	yaml = ext_fmt("eslint_d --fix"),
 	markdown = ext_fmt("markdownlint --fix"),
 }
 
