@@ -53,7 +53,7 @@
 }
 
 @mixin workspaces() {
-    @include button($flat: false, $radii: $panel_button_radius);
+    @include button($flat: false, $radii: 0);
     .workspace-btn{
         &.empty{ color: transparentize($fg_color, 0.34); }
         &.occupied{ color: transparentize($fg_color, 0.18); }

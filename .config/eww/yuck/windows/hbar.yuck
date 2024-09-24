@@ -1,6 +1,5 @@
 (defwidget panel_clock [] (box :class "button-bin"
     (button
-        :onclick "${EWW_CONFIG_DIR}/scripts/launcher toggle_menu calendar"
         :class "button clock"
         (label  :text panel_clock)
     )
@@ -39,6 +38,6 @@
         :halign "end"
         (panel_colorpicker)
         (panel_system_indicators :orientation "h")
-        (panel_powermenu)
+        ;(panel_weather)
     )
 ))
