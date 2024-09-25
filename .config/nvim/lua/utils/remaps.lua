@@ -13,19 +13,14 @@ local function lazy_register_which_key(input, description)
 end
 
 local function try_add_to_which_key_by_input(input, description)
-	local present_which_key, which_key = pcall(require, "which-key")
+	local present_which_key = pcall(require, "which-key")
 
 	local has_leader = string.find(input, "<leader>")
 	if has_leader then
 		if present_which_key then
 			if which_key_lazy_registers ~= nil then
-				which_key.register(which_key_lazy_registers)
 				which_key_lazy_registers = nil
 			end
-			which_key.register({
-				[input] = description,
-			})
-		else
 			lazy_register_which_key(input, description)
 		end
 	end

@@ -146,6 +146,7 @@ return {
 		--
 		-- r.which_key("fp", "parameters")
 		--
+
 		r.map_virtual("<leader>rp", "swap parameter to next")
 		r.map_virtual("<leader>rP", "swap parameter to previous")
 		--
