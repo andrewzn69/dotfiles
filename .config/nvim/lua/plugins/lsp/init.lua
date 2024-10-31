@@ -30,9 +30,9 @@ return {
 
 		local signs = {
 			{ name = "DiagnosticSignError", text = icons.diagnostics.error },
-			{ name = "DiagnosticSignWarn", text = icons.diagnostics.warning },
-			{ name = "DiagnosticSignHint", text = icons.diagnostics.hint },
-			{ name = "DiagnosticSignInfo", text = icons.diagnostics.information },
+			{ name = "DiagnosticSignWarn",  text = icons.diagnostics.warning },
+			{ name = "DiagnosticSignHint",  text = icons.diagnostics.hint },
+			{ name = "DiagnosticSignInfo",  text = icons.diagnostics.information },
 		}
 		for _, sign in ipairs(signs) do
 			vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
@@ -78,13 +78,15 @@ return {
 
 		local servers = {
 			bashls = require("plugins.lsp.servers.bashls")(on_attach),
+			biome = {},
 			cssls = require("plugins.lsp.servers.cssls")(on_attach),
 			dockerls = {},
 			html = {},
+			intelephense = require("plugins.lsp.servers.phpls")(on_attach),
 			jsonls = {},
 			lua_ls = require("plugins.lsp.servers.luals")(on_attach),
-			intelephense = require("plugins.lsp.servers.phpls")(on_attach),
-			pylsp = {},
+			marksman = {},
+			pyright = require("plugins.lsp.servers.pyright")(on_attach),
 			rust_analyzer = {},
 			tailwindcss = require("plugins.lsp.servers.tailwindcss")(on_attach),
 			terraformls = {},

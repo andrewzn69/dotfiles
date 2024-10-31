@@ -15,6 +15,7 @@ return {
 			local ensure_installed = {
 				"bash-language-server",
 				"black",
+				"biome",
 				"clang-format",
 				"clangd",
 				"css-lsp",

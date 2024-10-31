@@ -4,7 +4,7 @@ return {
 	opts = function()
 		local dashboard = require('alpha.themes.dashboard')
 
-		-- ASCII art for header section
+		-- ascii art for header section
 		dashboard.section.header.val = {
 			[[       ⢰⣧⣼⣯⠄⣸⣠⣶⣶⣦⣾⠄⠄⠄⠄⡀⠄⢀⣿⣿⠄⠄⠄⢸⡇⠄⠄]],
 			[[       ⣾⣿⠿⠿⠶⠿⢿⣿⣿⣿⣿⣦⣤⣄⢀⡅⢠⣾⣛⡉⠄⠄⠄⠸⢀⣿⠄]],
@@ -22,10 +22,10 @@ return {
 			[[          ⠉⠻⣿⣿⣾⣦⡙⠻⣷⣾⣿⠃⠿⠋⠁     ⢀⣠⣴ ]],
 			[[   ⣿⣿⣿⣶⣶⣮⣥⣒⠲⢮⣝⡿⣿⣿⡆⣿⡿⠃⠄⠄⠄⠄⠄⠄⠄⣠⣴⣿⣿⣿ ]],
 		}
-		-- Set header highlight to white
+		-- set header highlight to white
 		dashboard.section.header.opts.hl = 'Normal'
 
-		-- Buttons section
+		-- buttons section
 		dashboard.section.buttons.val = {
 			dashboard.button('i', '    new file', ':ene <BAR> startinsert<CR>'),
 			dashboard.button('o', '    old files', ':Telescope oldfiles<CR>'),
@@ -38,13 +38,13 @@ return {
 			dashboard.button('q', '󰭿    quit', ':qa<CR>'),
 		}
 
-		-- Button highlights
+		-- button highlights
 		for _, button in ipairs(dashboard.section.buttons.val) do
 			button.opts.hl = 'Normal'
 			button.opts.hl_shortcut = 'Function'
 		end
 
-		-- Footer with default text
+		-- footer with default text
 		dashboard.section.footer.val = "Welcome to Neovim"
 		dashboard.section.footer.opts.hl = "Special"
 
@@ -60,10 +60,10 @@ return {
 	end,
 
 	config = function(_, dashboard)
-		-- Initialize Alpha with the specified dashboard
+		-- init alpha with the specified dashboard
 		require('alpha').setup(dashboard.opts)
 
-		-- Footer update on LazyVim startup
+		-- footer update on LazyVim startup
 		vim.api.nvim_create_autocmd('User', {
 			pattern = 'LazyVimStarted',
 			callback = function()

@@ -70,6 +70,7 @@ return {
 				["<down>"] = cmp_next,
 				["<C-p>"] = cmp_prev,
 				["<up>"] = cmp_prev,
+				["<C-\\>"] = cmp.mapping.complete(),
 			},
 			experimental = {
 				ghost_text = true,

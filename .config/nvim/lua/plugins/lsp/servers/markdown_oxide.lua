@@ -4,6 +4,8 @@ return function(on_attach)
 		on_attach = function(client, bufnr)
 			on_attach(client, bufnr)
 		end,
-		root_dir = util.root_pattern(".git", "README.md"),     -- Add your root directory patterns here
+		cmd = { "markdown_oxide" },
+		filetypes = { "markdown", "mdx" },
+		root_dir = util.root_pattern(".git", vim.fn.getcwd()),
 	}
 end

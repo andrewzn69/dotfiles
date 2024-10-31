@@ -10,11 +10,13 @@ vim.opt.showcmd = true
 vim.opt.laststatus = 2
 vim.opt.scrolloff = 10
 
+-- cursorline
+vim.opt.cursorline = true
+vim.opt.cursorcolumn = true
+vim.opt.colorcolumn = "81"
 
 -- modelines (bad for security)
 vim.opt.modelines = 1
-
--- set leader key to comma vim.g.mapleader = ","
 
 -- hide buffers, not close them
 vim.opt.hidden = true
@@ -49,6 +51,10 @@ vim.opt.wildignore:append(".zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz,*.kgb")
 vim.opt.wildignore:append(".swp,.lock,.DS_Store,._*")
 vim.opt.wildignore:append(".,..")
 vim.opt.wildignore:append(" */node_modules/* ")
+
+-- use markdown syntax highlighting for mdx
+-- no mdx treeshitter support yet?
+vim.cmd([[au BufRead,BufNewFile *.mdx set filetype=markdown]])
 
 -- case insensitive search
 vim.opt.ignorecase = true
