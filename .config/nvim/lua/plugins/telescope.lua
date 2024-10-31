@@ -23,6 +23,7 @@ return {
                     preview_width = 0.6,
                     prompt_position = "bottom",
                 },
+								initial_mode = "normal",
                 borderchars = i.telescope,
                 mappings = {
                     i = {
@@ -53,6 +54,7 @@ return {
                     },
                 },
                 file_browser = {
+										hijack_netrw = true,
                     depth = 1,
                     auto_depth = false,
                     hidden = { file_browser = true, folder_browser = true },
