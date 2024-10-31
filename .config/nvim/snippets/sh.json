@@ -1,9 +1,0 @@
-{
-	"general": {
-		"prefix": "!",
-		"body": [
-			"#!/usr/bin/env bash\n\n\n"
-		],
-		"description": "init"
-	}
-}
