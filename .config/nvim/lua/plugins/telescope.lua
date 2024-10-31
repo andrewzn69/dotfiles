@@ -1,8 +1,7 @@
 return {
     "nvim-telescope/telescope.nvim",
     event = "VeryLazy",
-    dependencies = {
-        "nvim-lua/plenary.nvim",
+    dependencies = { "nvim-lua/plenary.nvim",
         "debugloop/telescope-undo.nvim",
         "nvim-telescope/telescope-file-browser.nvim",
         "nvim-telescope/telescope-live-grep-args.nvim",
@@ -79,10 +78,10 @@ return {
         r.noremap("n", "<leader>gc", function()
             lga_shortcuts.grep_word_under_cursor({ postfix = " --hidden " })
         end, "grep under cursor")
-        r.noremap("n", "<leader>f", function()
+        r.noremap("n", "sf", function()
             telescope.extensions.file_browser.file_browser()
         end, "browse files")
-        r.noremap("n", "<leader>.", function()
+        r.noremap("n", "s.", function()
             telescope.extensions.file_browser.file_browser({
                 path = vim.fn.stdpath("config"),
             })
