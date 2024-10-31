@@ -3,6 +3,7 @@ return {
 	dependencies = {
 		"folke/neodev.nvim",
 		"b0o/schemastore.nvim",
+		"ravibrock/spellwarn.nvim",
 		"williamboman/mason-lspconfig.nvim",
 		"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
 	},
@@ -10,6 +11,7 @@ return {
 	config = function()
 		require("neodev").setup({})
 		require("lsp_lines").setup()
+		require("spellwarn").setup()
 		local lspconfig = require("lspconfig")
 		local remaps = require("plugins.lsp.remaps")
 		local icons = require("utils.icons")
@@ -17,11 +19,10 @@ return {
 		local presentCmpNvimLsp, cmp_lsp = pcall(require, "cmp_nvim_lsp")
 		local presentLspSignature, lsp_signature = pcall(require, "lsp_signature")
 
-		vim.lsp.set_log_level("error") -- 'trace', 'debug', 'info', 'warn', 'error'
+		vim.lsp.set_log_level("error")
 
 		local function on_attach(client, bufnr)
 			remaps.set_default_on_buffer(client, bufnr)
-
 			if presentLspSignature then
 				lsp_signature.on_attach({ floating_window = false, timer_interval = 500 })
 			end
@@ -29,9 +30,9 @@ return {
 
 		local signs = {
 			{ name = "DiagnosticSignError", text = icons.diagnostics.error },
-			{ name = "DiagnosticSignWarn",  text = icons.diagnostics.warning },
-			{ name = "DiagnosticSignHint",  text = icons.diagnostics.hint },
-			{ name = "DiagnosticSignInfo",  text = icons.diagnostics.information },
+			{ name = "DiagnosticSignWarn", text = icons.diagnostics.warning },
+			{ name = "DiagnosticSignHint", text = icons.diagnostics.hint },
+			{ name = "DiagnosticSignInfo", text = icons.diagnostics.information },
 		}
 		for _, sign in ipairs(signs) do
 			vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
@@ -82,18 +83,14 @@ return {
 			html = {},
 			jsonls = {},
 			lua_ls = require("plugins.lsp.servers.luals")(on_attach),
-			marksman = require("plugins.lsp.servers.marksman")(on_attach),
-			omnisharp = require("plugins.lsp.servers.omnisharp")(on_attach),
 			intelephense = require("plugins.lsp.servers.phpls")(on_attach),
 			pylsp = {},
 			rust_analyzer = {},
+			tailwindcss = require("plugins.lsp.servers.tailwindcss")(on_attach),
 			terraformls = {},
 			tflint = {},
-			tsserver = require("plugins.lsp.servers.tsserver")(on_attach),
+			ts_ls = require("plugins.lsp.servers.ts_ls")(on_attach),
 			yamlls = {},
-			tailwindcss = {},
-			-- need to fix ig
-			--typst = require("plugins.lsp.servers.typst")(on_attach),
 		}
 
 		local default_lsp_config = {
@@ -106,25 +103,27 @@ return {
 		}
 
 		local server_names = {}
-		for server_name, _ in pairs(servers) do
+		local server_configs = {}
+		for server_name, server_config in pairs(servers) do
 			table.insert(server_names, server_name)
+			server_configs[server_name] = server_config
 		end
 
 		local present_mason, mason = pcall(require, "mason-lspconfig")
 		if present_mason then
 			mason.setup({ ensure_installed = server_names })
-		end
-
-		for server_name, server_config in pairs(servers) do
-			local merged_config = vim.tbl_deep_extend("force", default_lsp_config, server_config)
-			lspconfig[server_name].setup(merged_config)
-
-			if server_name == "rust_analyzer" then
-				local present_rust_tools, rust_tools = pcall(require, "rust-tools")
-				if present_rust_tools then
-					rust_tools.setup({ server = merged_config })
-				end
-			end
+			mason.setup_handlers({
+				function(server)
+					local merged_config = vim.tbl_deep_extend("force", default_lsp_config, server_configs[server] or {})
+					lspconfig[server].setup(merged_config)
+					if server == "rust_analyzer" then
+						local present_rust_tools, rust_tools = pcall(require, "rust-tools")
+						if present_rust_tools then
+							rust_tools.setup({ server = merged_config })
+						end
+					end
+				end,
+			})
 		end
 	end,
 }

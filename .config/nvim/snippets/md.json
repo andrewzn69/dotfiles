@@ -1,9 +1,10 @@
 {
 	"general": {
-		"prefix": "manualpost",
+		"prefix": "howtopost",
 		"body": [
 			"---",
 			"description: ${1: }",
+			"public: true",
 			"layout: ../../layouts/BlogPost.astro",
 			"title: How to ${2: }",
 			"createdAt: ${3:date}",
@@ -11,8 +12,9 @@
 			"tags:",
 			"- ${5: }",
 			"heroImage: /posts/${6: }",
-			"slug: ${7: }"
+			"slug: ${7: }",
+			"---"
 		],
-		"description": "init"
+		"description": "Template for my blog post"
 	}
 }

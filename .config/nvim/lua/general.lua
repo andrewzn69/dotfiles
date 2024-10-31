@@ -11,11 +11,10 @@ vim.opt.laststatus = 2
 vim.opt.scrolloff = 10
 
 
--- security
-vim.opt.modelines = 0
+-- modelines (bad for security)
+vim.opt.modelines = 1
 
--- set leader key to comma
-vim.g.mapleader = ","
+-- set leader key to comma vim.g.mapleader = ","
 
 -- hide buffers, not close them
 vim.opt.hidden = true

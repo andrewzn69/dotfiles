@@ -2,7 +2,7 @@
 	"general": {
 		"prefix": "!",
 		"body": [
-			"#!/bin/bash\n\n\n"
+			"#!/usr/bin/env bash\n\n\n"
 		],
 		"description": "init"
 	}

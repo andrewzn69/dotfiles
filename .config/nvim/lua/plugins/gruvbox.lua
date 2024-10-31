@@ -31,6 +31,7 @@ return {
 			},
 			overrides = {
 				MiniIndentscopeSymbol = { fg = "#A89984" }, -- for mini.indentscope
+				SignColumn = { bg = "#1D2022" }, -- for sign column
 			},
 			dim_inactive = false,
 			transparent_mode = false,

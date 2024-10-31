@@ -14,14 +14,15 @@ local int_fmt = function()
 end
 
 local cmds = {
+	astro = ext_fmt("npx @biomejs/biome format --write"),
 	c = ext_fmt("clang-format --style=file -i"),
 	cmake = ext_fmt("cmake-format -i"),
 	cpp = ext_fmt("clang-format --style=file -i"),
-	css = ext_fmt("prettier -w"),
+	--css = ext_fmt("prettier -w"),
 	go = int_fmt,
 	html = ext_fmt("prettier -w"),
 	java = ext_fmt("astyle -A2 -s2 -c -J -n -q -z2 -xC80"),
-	javascript = ext_fmt("prettier -w"),
+	javascript = ext_fmt("eslint_d"),
 	json = ext_fmt("prettierd -w"),
 	lua = ext_fmt("stylua"),
 	nix = ext_fmt("nixpkgs-fmt"),
@@ -29,8 +30,9 @@ local cmds = {
 	python = ext_fmt("black"),
 	rust = int_fmt,
 	sh = ext_fmt("shfmt -w -i 0 -sr -kp"),
-	typescript = ext_fmt("prettier -w"),
-	yaml = ext_fmt("prettier -w"),
+	typescript = ext_fmt("pnpx @biomejs/biome format --write"),
+	typescriptreact = ext_fmt("pnpx @biomejs/biome format --write"),
+	yaml = ext_fmt("eslint_d --fix"),
 	markdown = ext_fmt("markdownlint --fix"),
 }
 

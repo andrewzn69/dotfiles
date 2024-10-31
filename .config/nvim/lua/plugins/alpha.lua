@@ -3,16 +3,29 @@ return {
 	event = 'VimEnter',
 	opts = function()
 		local dashboard = require('alpha.themes.dashboard')
-		require("alpha.term")
-		dashboard.section.terminal.command = vim.fn.stdpath("config") .. "/nvim-logo -b"
-		dashboard.section.terminal.width = 70
-		dashboard.section.terminal.height = 15 
-		dashboard.section.terminal.opts.redraw = true
-		dashboard.section.terminal.opts.window_config.zindex = 1
-		-- offset placment for screenshots
-		-- dashboard.section.terminal.opts.window_config.col = math.floor((vim.o.columns - 70) / 2 + 20)
-		-- vim.cmd [[autocmd! User AlphaClosed]]
 
+		-- ASCII art for header section
+		dashboard.section.header.val = {
+			[[       ⢰⣧⣼⣯⠄⣸⣠⣶⣶⣦⣾⠄⠄⠄⠄⡀⠄⢀⣿⣿⠄⠄⠄⢸⡇⠄⠄]],
+			[[       ⣾⣿⠿⠿⠶⠿⢿⣿⣿⣿⣿⣦⣤⣄⢀⡅⢠⣾⣛⡉⠄⠄⠄⠸⢀⣿⠄]],
+			[[      ⢀⡋⣡⣴⣶⣶⡀⠄⠄⠙⢿⣿⣿⣿⣿⣿⣴⣿⣿⣿⢃⣤⣄⣀⣥⣿⣿⠄ ]],
+			[[      ⢸⣇⠻⣿⣿⣿⣧⣀⢀⣠⡌⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠿⠿⣿⣿⣿⠄ ]],
+			[[    ⢀⢸⣿⣷⣤⣤⣤⣬⣙⣛⢿⣿⣿⣿⣿⣿⣿⡿⣿⣿⡍⠄⠄⢀⣤⣄⠉⠋⣰ ]],
+			[[    ⣼⣖⣿⣿⣿⣿⣿⣿⣿⣿⢿⣿⣿⣿⣿⣿⢇⣿⣿⡷⠶⠶⢿⣿⣿⠇⢀⣤ ]],
+			[[   ⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣽⣿⣿⣿⡇⣿⣿⣿⣿⣿⣿⣷⣶⣥⣴⣿⡗ ]],
+			[[   ⢀⠈⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟ ]],
+			[[   ⢸⣿⣦⣌⣛⣻⣿⣿⣧⠙⠛⠛⡭⠅⠒⠦⠭⣭⡻⣿⣿⣿⣿⣿⣿⣿⣿⡿⠃ ]],
+			[[   ⠘⣿⣿⣿⣿⣿⣿⣿⣿⡆⠄⠄⠄⠄⠄⠄⠄⠄⠹⠈⢋⣽⣿⣿⣿⣵⣾⠃ ]],
+			[[    ⠘⣿⣿⣿⣿⣿⣿⣿⣿⠄⣴⣿⣶⣄⠄⣴⣶⠄⢀⣾⣿⣿⣿⣿⣿⠃ ]],
+			[[     ⠈⠻⣿⣿⣿⣿⣿⣿⡄⢻⣿⣿⣿⠄⣿⣿⡀⣾⣿⣿⣿⣿⣛⠛⠁ ]],
+			[[       ⠈⠛⢿⣿⣿⣿⠁⠞⢿⣿⣿⡄⢿⣿⡇⣸⣿⣿⠿⠛⠁ ]],
+			[[          ⠉⠻⣿⣿⣾⣦⡙⠻⣷⣾⣿⠃⠿⠋⠁     ⢀⣠⣴ ]],
+			[[   ⣿⣿⣿⣶⣶⣮⣥⣒⠲⢮⣝⡿⣿⣿⡆⣿⡿⠃⠄⠄⠄⠄⠄⠄⠄⣠⣴⣿⣿⣿ ]],
+		}
+		-- Set header highlight to white
+		dashboard.section.header.opts.hl = 'Normal'
+
+		-- Buttons section
 		dashboard.section.buttons.val = {
 			dashboard.button('i', '    new file', ':ene <BAR> startinsert<CR>'),
 			dashboard.button('o', '    old files', ':Telescope oldfiles<CR>'),
@@ -24,37 +37,38 @@ return {
 			dashboard.button('p', '󰄉    profile', ':Lazy profile<CR>'),
 			dashboard.button('q', '󰭿    quit', ':qa<CR>'),
 		}
+
+		-- Button highlights
 		for _, button in ipairs(dashboard.section.buttons.val) do
 			button.opts.hl = 'Normal'
 			button.opts.hl_shortcut = 'Function'
 		end
+
+		-- Footer with default text
+		dashboard.section.footer.val = "Welcome to Neovim"
 		dashboard.section.footer.opts.hl = "Special"
+
 		dashboard.opts.layout = {
-			dashboard.section.terminal,
+			{ type = "padding", val = 2 },
+			dashboard.section.header,
 			{ type = "padding", val = 4 },
 			dashboard.section.buttons,
+			{ type = "padding", val = 2 },
 			dashboard.section.footer,
 		}
 		return dashboard
 	end,
+
 	config = function(_, dashboard)
-		-- close lazy and re-open when the dashboard is ready
-		if vim.o.filetype == 'lazy' then
-			vim.cmd.close()
-			vim.api.nvim_create_autocmd('User', {
-				pattern = 'AlphaReady',
-				callback = function()
-					require('lazy').show()
-				end,
-			})
-		end
+		-- Initialize Alpha with the specified dashboard
 		require('alpha').setup(dashboard.opts)
 
+		-- Footer update on LazyVim startup
 		vim.api.nvim_create_autocmd('User', {
 			pattern = 'LazyVimStarted',
 			callback = function()
 				local stats = require('lazy').stats()
-				local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
+				local ms = math.floor(stats.startuptime * 100 + 0.5) / 100
 				dashboard.section.footer.val = '󱐋 ' .. stats.count .. ' plugins loaded in ' .. ms .. 'ms'
 				pcall(vim.cmd.AlphaRedraw)
 			end,

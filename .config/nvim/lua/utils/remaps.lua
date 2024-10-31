@@ -1,33 +1,22 @@
 local keymap = vim.keymap
 local check_duplicates = require("utils.duplicates").check_duplicates
-
 local X = {}
+local wk_lazy = {}
 
-local which_key_lazy_registers = nil
-local function lazy_register_which_key(input, description)
-	if which_key_lazy_registers == nil then
-		which_key_lazy_registers = {}
-	end
-
-	which_key_lazy_registers[input] = description
+local function lazy_register_wk(input)
+	table.insert(wk_lazy, input)
 end
 
-local function try_add_to_which_key_by_input(input, description)
-	local present_which_key, which_key = pcall(require, "which-key")
-
-	local has_leader = string.find(input, "<leader>")
-	if has_leader then
-		if present_which_key then
-			if which_key_lazy_registers ~= nil then
-				which_key.register(which_key_lazy_registers)
-				which_key_lazy_registers = nil
-			end
-			which_key.register({
-				[input] = description,
-			})
-		else
-			lazy_register_which_key(input, description)
+local function add_wk(input)
+	local wk_ready, wk = pcall(require, "which-key")
+	if wk_ready and wk.did_setup then
+		if wk_lazy ~= {} then
+			lazy_register_wk(input)
+			wk.add(wk_lazy)
+			wk_lazy = {}
 		end
+	else
+		lazy_register_wk(input)
 	end
 end
 
@@ -48,13 +37,8 @@ function X.noremap(type, input, output, description, additional_options)
 	X.map(type, input, output, description, options)
 end
 
-function X.map_virtual(input, description)
-	check_duplicates(type, input, description)
-	try_add_to_which_key_by_input(input, description)
-end
-
-function X.which_key(input, description)
-	try_add_to_which_key_by_input(input, description)
+function X.map_virtual(input)
+	add_wk(input)
 end
 
 return X
