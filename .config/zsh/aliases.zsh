@@ -32,12 +32,9 @@ alias wscan='nmcli dev wifi rescan'
 # useful shit
 alias mkdir='mkdir -p'
 alias la='ls -a'
-alias freeram="sudo sh -c 'sync; echo 3 > /proc/sys/vm/drop_caches'"
-alias wttr='curl wttr.in'
 alias rm='rm -iv'
 alias mv='mv -iv'
 alias cp='cp -iv'
-alias pastebin='nc termbin.com 9999'
 
 # programs
 alias qr='cobang'
@@ -46,6 +43,9 @@ alias cal='cal -y'
 alias calc='speedcrunch'
 alias py='python3'
 alias cleandots='antidot clean'
+alias freeram="sudo sh -c 'sync; echo 3 > /proc/sys/vm/drop_caches'"
+alias wttr='curl wttr.in'
+alias pastebin='nc termbin.com 9999'
 
 # scripts
 alias scrape='bash $HOME/Development/bash-scripts/scrape/scrape.sh'
@@ -56,6 +56,17 @@ alias manual='glow $HOME/docs/Manual/'
 alias diskhealth='sudo sh $HOME/Development/bash-scripts/diskhealth/diskhealth.sh'
 alias compare='bash $HOME/Development/bash-scripts/compare/compare.sh'
 alias randomfilenames='py $HOME/Development/Python/randomfilenames/randomfilenames.py'
+
+# random shit
+alias lol='base64 </dev/urandom | lolcat'
+alias zen="while :; do cbonsai -l -b 2 -c oO0 -t 0.5; sleep 10; done"
+
+# security
+alias rip="sudo srm -dvrl"
+alias ripfull="sudo srm -dlv"
+alias checkrootkits="sudo rkhunter --update; sudo rkhunter --propupd; sudo rkhunter --check"
+alias checkvirus="clamscan --recursive=yes --infected /home"
+alias updateantivirus="sudo freshclam"
 
 # kubernetes
 alias h='helm'
