@@ -2,5 +2,14 @@
 
 # history
 HISTFILE="$XDG_CONFIG_HOME/zsh/.zhistory"
-HISTSIZE="69696"
-SAVEHIST="69696"
+HISTSIZE="10000"
+SAVEHIST="10000"
+
+# completion
+autoload -Uz compinit
+compinit
+
+# emacs keybindings
+bindkey -e
+bindkey '^[[1;5C' forward-word
+bindkey '^[[1;5D' backward-word
