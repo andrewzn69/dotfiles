@@ -8,8 +8,8 @@ do
 done <<-EOF
 aliases
 env
-ohmyzsh
 options
 prompt
 secrets
+zinit
 EOF
