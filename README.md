@@ -11,5 +11,6 @@
 | 🎨 **Theme**    | **Darker** [**Gruvbox**](https://github.com/ellisonleao/gruvbox.nvim) |
 | 📝 **IDE**      | [**Neovim**](https://neovim.io)                                       |
 | 🐱 **Terminal** | [**Kitty**](https://sw.kovidgoyal.net/kitty)                          |
+| 🖥️ **Bar**      | [**Hyprpanel**](https://hyprpanel.com/)
 
 </div>
