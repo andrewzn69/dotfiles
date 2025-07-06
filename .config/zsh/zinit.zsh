@@ -22,3 +22,5 @@ zinit light-mode for \
 # zinit ice wait'!0'
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-history-substring-search
+zinit light zdharma-continuum/fast-syntax-highlighting
