@@ -3,6 +3,8 @@
 # zsh
 export ZSH="$HOME/.oh-my-zsh"
 export PATH=/home/zimn/.cargo/bin:$PATH
+export PATH="/usr/bin:$PATH"
+export PATH="$HOME/go/bin:$PATH"
 
 # prompts
 export SUDO_PROMPT="password: "
@@ -40,4 +42,5 @@ export LS_COLORS="$LS_COLORS:ow=1;34:tw=1;34:"
 # gtfo
 export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 
-export PATH="/usr/bin:$PATH"
+
+export PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION="python"
