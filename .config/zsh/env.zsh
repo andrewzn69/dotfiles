@@ -42,5 +42,7 @@ export LS_COLORS="$LS_COLORS:ow=1;34:tw=1;34:"
 # gtfo
 export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 
+# why just why?
+export ANSIBLE_NOCOWS=1
 
 export PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION="python"
